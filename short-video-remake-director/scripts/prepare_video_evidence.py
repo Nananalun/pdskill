@@ -19,7 +19,14 @@ def run(cmd: list[str]) -> None:
 
 
 def capture_json(cmd: list[str]) -> dict:
-    completed = subprocess.run(cmd, check=True, text=True, capture_output=True)
+    completed = subprocess.run(
+        cmd,
+        check=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        capture_output=True,
+    )
     return json.loads(completed.stdout)
 
 
