@@ -1,6 +1,6 @@
 ---
 name: short-video-remake-director
-description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 高相似脚本, 编导策略, 拍摄单, or remap a reference video to a product such as 紫砂水培罐 while preserving sensory similarity instead of producing generic scripts.
+description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 单元状态时间线, 说话人归属, 在场/缺席时间线, high-similarity scripts, 编导策略, 拍摄单, or remap a reference video to a product such as 紫砂水培罐 while preserving sensory similarity instead of producing generic scripts.
 ---
 
 # Short Video Remake Director
@@ -11,7 +11,7 @@ Treat every source video as a new directing problem. Do not reuse the last video
 
 Sensory similarity comes before theory. The audience feels casting, posture, camera distance, subtitles, BGM, voice style, rhythm, proof staging, texture, and editing before it understands the selling-point logic.
 
-For scripted or semi-scripted videos, story causality comes before product remapping. Do not treat "plot" as a vibe. Extract who wants what, what blocks them, what information changes, who gains power, what joke/reversal happens, and exactly how the product enters the story.
+For scripted or semi-scripted videos, unit-state causality comes before story causality. Do not treat units as a static inventory. First track each important unit across time: whether it is present, absent, speaking, silent, moving, refusing, returning, proving, being revealed, or becoming a conversion prop. The story spine must be derived from this state timeline.
 
 ## Evidence Workflow
 
@@ -19,10 +19,11 @@ For scripted or semi-scripted videos, story causality comes before product remap
 2. Read metadata with `ffprobe`.
 3. Run `scripts/prepare_video_evidence.py` to create frames, opening frames, tile images, audio, and waveform.
 4. Inspect `overview_tile.jpg` and `opening_tile.jpg` before writing strategy.
-5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
-6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, and plot causality.
-7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a story spine before the unit summary. Use `references/story-layer.md`.
-8. Write source units first. Do not jump directly to a remake script.
+5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request speaker attribution, presence/absence, plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
+6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, speaker attribution, presence/absence, and plot causality.
+7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a unit state timeline before the story spine. Use `references/unit-state-timeline.md`.
+8. Then write the story spine from the unit state timeline. Use `references/story-layer.md`.
+9. Write source units before the remake script. Do not jump directly to remapping.
 
 If TWE is unavailable, continue from local frames and mark the missing evidence.
 
@@ -32,14 +33,15 @@ For a full trial, output artifacts in this order:
 
 1. Source evidence summary: video metadata, local frame evidence, TWE segment count/path if used.
 2. Raw/TWE segment summary: compact timeline with purpose, visible evidence, spoken/screen text, and uncertainty.
-3. Story spine when the source is scripted or conflict-led: plot premise, character objectives, knowledge gaps, conflict, beat-by-beat cause/effect, reversal, joke/payoff, product bridge, and what can/cannot be changed.
-4. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
-5. Structured source graph: stable IDs for `story_spine`, `plot_beats`, `character_arcs`, `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
-6. Mechanism vs shell: what must be preserved because it creates the source's effect, and what must change because it is category-specific, false, risky, or incompatible.
-7. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, remake units, and reason.
-8. Director brief: core mind, opening conflict, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
-9. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
-10. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
+3. Unit state timeline when the source is scripted or conflict-led: all important units, per-time presence/absence, speaker attribution, actions, states, relations, and post-edit units. It must be possible to reconstruct the video from this table alone.
+4. Story spine when the source is scripted or conflict-led: plot premise, character objectives, knowledge gaps, conflict, beat-by-beat cause/effect, reversal, joke/payoff, product bridge, and what can/cannot be changed.
+5. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
+6. Structured source graph: stable IDs for `units`, `unit_state_timeline`, `story_spine`, `plot_beats`, `character_arcs`, `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
+7. Mechanism vs shell: what must be preserved because it creates the source's effect, and what must change because it is category-specific, false, risky, or incompatible.
+8. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, remake units, and reason.
+9. Director brief: core mind, opening conflict, unit-state engine, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
+10. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, unit state change, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
+11. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
 
@@ -47,7 +49,7 @@ When the user next asks for 每个镜头的开始帧, start frames, storyboard k
 
 ## Source Unit Rules
 
-Use stable IDs and include both object units and style units. Do not bury style in prose.
+Use stable IDs and include both object units and style units. Do not bury style in prose. A unit is not only an object; it is a stateful entity over time.
 
 Minimum categories:
 
@@ -63,7 +65,7 @@ Minimum categories:
 - Whole-video style: news, medical, UGC, white authority, role drama, street interview, premium lab, rough realness.
 - Sensory anchors: the few units that make the source feel like itself.
 
-For scripted or semi-scripted videos, add a story layer and a performance layer. The story layer captures plot premise, character objectives, obstacles, trigger, escalation, reversal, payoff, product bridge, and conversion logic. The performance layer captures who judges whom, who has power, what insecurity/desire is triggered, what micro-action reverses power, and how the product enables that reversal.
+For scripted or semi-scripted videos, add a unit-state layer, a story layer, and a performance layer. The unit-state layer captures each important unit's timeline state and relationships. The story layer captures plot premise, character objectives, obstacles, trigger, escalation, reversal, payoff, product bridge, and conversion logic. The performance layer captures who judges whom, who has power, what insecurity/desire is triggered, what micro-action reverses power, and how the product enables that reversal.
 
 ## Finding The "神"
 
@@ -99,6 +101,8 @@ When the source is story-driven, map story roles before mapping product units:
 - product bridge -> truthful remake product bridge.
 - reversal/payoff -> remake reversal/payoff with the same timing and power shift.
 
+Before mapping story roles, map unit states. If a character leaves, returns alone, becomes silent, becomes absent, moves behind the car, starts speaking offscreen, or appears only as a post-edit sticker, that state change is often the real story mechanism.
+
 ## Purple-Clay Sprouting Jar Baseline
 
 When the target product is the 紫砂水培罐, read `references/zisha-product-baseline.md`.
@@ -113,8 +117,11 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 ## Quality Gates
 
 - The source unit summary must appear before the remake script.
-- For story-driven sources, the story spine must appear before the source unit summary. If the story spine is missing or vague, stop and fix it before writing the remake.
+- For story-driven sources, the unit state timeline must appear before the story spine. If the timeline is missing or vague, stop and fix it before writing the story spine.
+- The unit state timeline must include presence/absence, speaker attribution, state changes, relationship changes, and post-edit units. If looking only at the timeline does not reveal what happened in the video, the analysis is not ready.
+- For story-driven sources, the story spine must be derived from the unit state timeline and appear before the source unit summary. If the story spine contradicts the state timeline, fix the timeline or spine before writing the remake.
 - The story spine must name each main character's objective, obstacle, power position, knowledge gap, turning point, and payoff. "Short drama" or "conflict" alone is not enough.
+- Every causal claim must point to a visible state change, spoken line, subtitle, edit, or post-edit unit. Do not infer causality only from the product's desired selling logic.
 - The remake script must preserve the source story engine unless there is a clear compliance or product-truth reason to change it. If the engine changes, explain the replacement engine.
 - The opening must be analyzed at higher resolution than the rest of the video.
 - BGM, voice style, subtitles, overall visual style, and edit rhythm must have unit IDs.
@@ -126,6 +133,7 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 ## Resources
 
 - `scripts/prepare_video_evidence.py`: extract metadata, keyframes, opening frames, tile images, mono audio, and waveform.
+- `references/unit-state-timeline.md`: required unit status and relationship timeline rules for scripted, role-play, and conflict-led videos.
 - `references/story-layer.md`: required story extraction and remap rules for scripted, role-play, and conflict-led videos.
 - `references/unit-schema.md`: structured fields for the source graph.
 - `references/output-contract.md`: required artifact shapes and file naming.

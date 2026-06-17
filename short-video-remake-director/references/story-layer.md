@@ -6,9 +6,11 @@ Use this reference for scripted, role-play, skit, conflict-led, acted, prank-lik
 
 Do not reduce a story-driven source to "role drama" or "conflict." The remake must preserve the plot engine: who wants what, why it is blocked, what changes, who gains or loses power, and how the product enters without breaking the scene.
 
+Story spine must be derived from a unit state timeline, not directly from a loose summary or TWE plot label. If a causal beat is not supported by a unit state change, spoken line, subtitle, edit, or post-edit unit, mark it uncertain instead of treating it as story fact.
+
 ## Required Story Extraction
 
-Before writing product units or a remake script, create a story spine:
+Before writing product units or a remake script, first create a unit state timeline, then create a story spine:
 
 1. `premise`: one sentence describing the scene situation.
 2. `characters`: each main character's visible identity, objective, obstacle, knowledge gap, power position, expression/action pattern, and story function.
@@ -68,6 +70,9 @@ Map story before product:
 
 Stop and revise if any of these happen:
 
+- The story spine cannot be reconstructed from the unit state timeline.
+- A causal statement says a character changed intent, but the timeline shows no visible state change, line, absence/return, or edit proving it.
+- A speaker is assigned by OCR/TWE without frame or subtitle support.
 - The remake has the source's props but not its cause-effect chain.
 - Characters say selling points without a scene reason.
 - The skeptic becomes a product explainer.

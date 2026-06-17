@@ -17,6 +17,27 @@ story_spine:
   product_bridge:
   payoff:
 
+units:
+  - id: U01
+    label:
+    type:
+    core_function:
+    sensory_anchor:
+    remake_action:
+
+unit_state_timeline:
+  - time: "0-3s"
+    states:
+      U01:
+      U02:
+    spoken_lines:
+      - speaker:
+        text:
+        certainty:
+    relationship_change:
+    event:
+    evidence:
+
 characters:
   - id: CH01
     role:
@@ -110,6 +131,19 @@ For every important unit, capture:
 - `remake_action`: keep/replace/delete/add/borrow-only.
 - `replacement_function`: when replaced, what sensory function the new unit must preserve.
 
+## Unit State Fields
+
+For each timeline row, capture:
+
+- `time`: exact or approximate time range.
+- `states`: per-unit state. Include present/absent/offscreen, position, action, expression, product state, and whether the unit is speaking.
+- `spoken_lines`: line-level speaker attribution with certainty.
+- `relationship_change`: how unit relationships changed in this row.
+- `event`: what happened as a consequence of state changes.
+- `evidence`: frame, subtitle, audio, or post-edit evidence.
+
+The timeline is not a summary. It is the source of truth used to derive story beats.
+
 ## Required Style Units
 
 Always create IDs for:
@@ -128,6 +162,10 @@ Always create IDs for:
 
 For scripted, role-play, conflict-led, or semi-scripted sources, always create IDs for:
 
+- Stateful units including people, products, props, scene frames, text/stickers, BGM, live sound, and camera/editing.
+- Presence/absence changes.
+- Speaker attribution changes.
+- Relationship changes.
 - Plot premise.
 - Main character objective.
 - Skeptic/judge objective.
