@@ -5,12 +5,12 @@ Use this reference when the remake target is the purple-clay hydroponic sproutin
 ## Selling Priority
 
 1. Health/养生 mind:
-   - 家里自己发豆芽.
-   - 过程看得见.
-   - 只用豆子和清水, with a strong "0 添加/0 污染" feeling.
-   - 给老人、孩子、家里人吃更踏实.
-   - 新鲜现发, 绿色生活/健康营养.
+   - 家里自己发健康养生豆芽.
    - 紫砂/红泥/陶质带来天然、传统、厨房可信感.
+   - 新鲜现发, 绿色生活/健康营养.
+   - 给老人、孩子、家里人吃更像日常养生小菜.
+   - 只用豆子和清水, with a strong "0 添加/0 污染" feeling.
+   - 过程看得见/可记录只能作为健康养生的辅助证据, not the headline selling point.
 
 2. Structure/material proof:
    - 全隔水设计: 豆芽不烂根.
@@ -24,7 +24,7 @@ Use this reference when the remake target is the purple-clay hydroponic sproutin
    - 4-6 天开盖收获豆芽; 豆苗 6-12 天.
    - 成品: white/clean-looking, plump, upright, large quantity, crisp in cooking/eating.
 
-The main story is not "a convenient sprouting tool" and not only "sprouts grow stronger." The main story is: self-sprouting at home is a visible, more reassuring health/养生 choice; the jar's material and structure prove that this home process can be done cleanly and successfully.
+The main story is not "a convenient sprouting tool," not "visible process," and not only "sprouts grow stronger." The main story is: self-sprouting in a natural-feeling purple-clay jar is a healthier/养生 family food habit; visible process and structure are supporting proof, not the main message.
 
 ## Product Structure Facts
 
@@ -53,7 +53,10 @@ The main story is not "a convenient sprouting tool" and not only "sprouts grow s
 Use:
 
 - 自己发.
-- 看得见.
+- 健康养生.
+- 自家发养生豆芽.
+- 天然陶质感.
+- 看得见, only as proof copy, not as the main hook.
 - 吃着更踏实/更放心.
 - 只用豆子和清水.
 - 0 添加/0 污染/0 难度 as a material-derived product phrase, preferably supported by process visuals.
