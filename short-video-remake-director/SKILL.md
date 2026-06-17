@@ -11,15 +11,18 @@ Treat every source video as a new directing problem. Do not reuse the last video
 
 Sensory similarity comes before theory. The audience feels casting, posture, camera distance, subtitles, BGM, voice style, rhythm, proof staging, texture, and editing before it understands the selling-point logic.
 
+For scripted or semi-scripted videos, story causality comes before product remapping. Do not treat "plot" as a vibe. Extract who wants what, what blocks them, what information changes, who gains power, what joke/reversal happens, and exactly how the product enters the story.
+
 ## Evidence Workflow
 
 1. Confirm the source video path and product target.
 2. Read metadata with `ffprobe`.
 3. Run `scripts/prepare_video_evidence.py` to create frames, opening frames, tile images, audio, and waveform.
 4. Inspect `overview_tile.jpg` and `opening_tile.jpg` before writing strategy.
-5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. Treat it as evidence, not final judgment.
-6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, and conversion shots.
-7. Write source units first. Do not jump directly to a remake script.
+5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
+6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, and plot causality.
+7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a story spine before the unit summary. Use `references/story-layer.md`.
+8. Write source units first. Do not jump directly to a remake script.
 
 If TWE is unavailable, continue from local frames and mark the missing evidence.
 
@@ -29,13 +32,14 @@ For a full trial, output artifacts in this order:
 
 1. Source evidence summary: video metadata, local frame evidence, TWE segment count/path if used.
 2. Raw/TWE segment summary: compact timeline with purpose, visible evidence, spoken/screen text, and uncertainty.
-3. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
-4. Structured source graph: stable IDs for `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
-5. Mechanism vs shell: what must be preserved because it creates the source's effect, and what must change because it is category-specific, false, risky, or incompatible.
-6. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, remake units, and reason.
-7. Director brief: core mind, opening conflict, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
-8. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, product entry, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
-9. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
+3. Story spine when the source is scripted or conflict-led: plot premise, character objectives, knowledge gaps, conflict, beat-by-beat cause/effect, reversal, joke/payoff, product bridge, and what can/cannot be changed.
+4. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
+5. Structured source graph: stable IDs for `story_spine`, `plot_beats`, `character_arcs`, `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
+6. Mechanism vs shell: what must be preserved because it creates the source's effect, and what must change because it is category-specific, false, risky, or incompatible.
+7. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, remake units, and reason.
+8. Director brief: core mind, opening conflict, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
+9. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
+10. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
 
@@ -59,12 +63,13 @@ Minimum categories:
 - Whole-video style: news, medical, UGC, white authority, role drama, street interview, premium lab, rough realness.
 - Sensory anchors: the few units that make the source feel like itself.
 
-For scripted or semi-scripted videos, add a performance layer: who judges whom, who has power, what insecurity/desire is triggered, what micro-action reverses power, and how the product enables that reversal.
+For scripted or semi-scripted videos, add a story layer and a performance layer. The story layer captures plot premise, character objectives, obstacles, trigger, escalation, reversal, payoff, product bridge, and conversion logic. The performance layer captures who judges whom, who has power, what insecurity/desire is triggered, what micro-action reverses power, and how the product enables that reversal.
 
 ## Finding The "神"
 
 Classify the source's primary spirit before remapping. Common examples:
 
+- Story-driven commerce spirit: the plot is the carrier. Preserve the character objective, conflict, misunderstanding, reveal, reversal, and conversion bridge before changing product facts.
 - Role-drama spirit: casting, social power, gaze, micro-expressions, blocking, insult/desire/reversal.
 - Medicalized fear spirit: extreme problem, authority diagnosis, hidden cause visualization, product as targeted solution, proof stack, user sensory result.
 - News/science spirit: anchor desk, yellow title bars, research pages, maps, data, lab, certificates, product technology, UGC collage.
@@ -86,6 +91,14 @@ For each source feature, decide:
 
 Avoid turning a high-similarity remake into a generic tutorial. If the source is news-like, the remake should still feel like a news segment. If the source is drama-like, the remake should still feel acted and socially charged. If the source is a proof montage, the remake should still feel dense and evidence-led.
 
+When the source is story-driven, map story roles before mapping product units:
+
+- protagonist/seller role -> remake protagonist/seller role.
+- judge/skeptic role -> remake judge/skeptic role.
+- conflict object -> remake conflict object.
+- product bridge -> truthful remake product bridge.
+- reversal/payoff -> remake reversal/payoff with the same timing and power shift.
+
 ## Purple-Clay Sprouting Jar Baseline
 
 When the target product is the 紫砂水培罐, read `references/zisha-product-baseline.md`.
@@ -100,6 +113,9 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 ## Quality Gates
 
 - The source unit summary must appear before the remake script.
+- For story-driven sources, the story spine must appear before the source unit summary. If the story spine is missing or vague, stop and fix it before writing the remake.
+- The story spine must name each main character's objective, obstacle, power position, knowledge gap, turning point, and payoff. "Short drama" or "conflict" alone is not enough.
+- The remake script must preserve the source story engine unless there is a clear compliance or product-truth reason to change it. If the engine changes, explain the replacement engine.
 - The opening must be analyzed at higher resolution than the rest of the video.
 - BGM, voice style, subtitles, overall visual style, and edit rhythm must have unit IDs.
 - The remake must explain why it still feels like the source.
@@ -110,6 +126,7 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 ## Resources
 
 - `scripts/prepare_video_evidence.py`: extract metadata, keyframes, opening frames, tile images, mono audio, and waveform.
+- `references/story-layer.md`: required story extraction and remap rules for scripted, role-play, and conflict-led videos.
 - `references/unit-schema.md`: structured fields for the source graph.
 - `references/output-contract.md`: required artifact shapes and file naming.
 - `references/zisha-product-baseline.md`: purple-clay sprouting jar selling points and compliance boundaries.

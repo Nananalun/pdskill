@@ -1,4 +1,4 @@
 interface:
   display_name: "Short Video Remake Director"
-  short_description: "Find a reference video's spirit, structured units, and high-similarity product remake script."
-  default_prompt: "Analyze this reference short video. First output the source units and spirit mechanism, then remap it into a high-similarity product remake script."
+  short_description: "Find a reference video's story spine, spirit, structured units, and high-similarity product remake script."
+  default_prompt: "Analyze this reference short video. First output the story spine when it is scripted, then source units and spirit mechanism, then remap it into a high-similarity product remake script."
