@@ -87,4 +87,6 @@ Each shot must specify:
 - BGM/live sound/SFX.
 - Intended psychological beat.
 
+The picture/frame field should be one clear sentence, not a heavy multi-part breakdown, but it must not omit key units. Include critical spatial movement, who is present or absent, foreground/background frame, product/prop entry, and post-edit text/stickers when they affect the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
+
 Avoid conceptual shots such as "show health" or "prove quality." Say what the camera sees.

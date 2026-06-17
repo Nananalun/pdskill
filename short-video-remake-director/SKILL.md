@@ -45,6 +45,8 @@ For a full trial, output artifacts in this order:
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
 
+Visual script picture descriptions should stay lightweight but complete. Use one clear sentence for the frame/action column, not a heavy start/middle/end breakdown, but include any key spatial move, absence/return, foreground/background, product/prop entry, and post-edit sticker that changes the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
+
 When the user next asks for 每个镜头的开始帧, start frames, storyboard keyframes, or image-generation prompts from the approved visual script, hand off to `short-video-start-frame-director` instead of expanding this skill.
 
 ## Source Unit Rules
@@ -123,6 +125,7 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 - The story spine must name each main character's objective, obstacle, power position, knowledge gap, turning point, and payoff. "Short drama" or "conflict" alone is not enough.
 - Every causal claim must point to a visible state change, spoken line, subtitle, edit, or post-edit unit. Do not infer causality only from the product's desired selling logic.
 - The remake script must preserve the source story engine unless there is a clear compliance or product-truth reason to change it. If the engine changes, explain the replacement engine.
+- In visual scripts, the picture/frame column must be concise but not lossy: one sentence should say what the camera sees and any critical movement or missing unit. If a key movement such as "vehicle moves from front windshield to side window" is omitted, revise the shot.
 - The opening must be analyzed at higher resolution than the rest of the video.
 - BGM, voice style, subtitles, overall visual style, and edit rhythm must have unit IDs.
 - The remake must explain why it still feels like the source.
