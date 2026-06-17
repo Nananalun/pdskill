@@ -21,6 +21,7 @@ For scripted or semi-scripted videos, unit-state causality comes before story ca
 4. Inspect `overview_tile.jpg` and `opening_tile.jpg` before writing strategy.
 5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request speaker attribution, presence/absence, plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
 6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, speaker attribution, presence/absence, and plot causality.
+   - For host-led, role-led, sales-led, or acted videos, treat spoken copy/subtitles as child units of the speaking person, not as standalone ad copy. Use IDs such as `P01.V01` and record the speaker identity, speaker state, bound visual evidence, bound prop/product/text units, rhythm, function, and replacement rule.
 7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a unit state timeline before the story spine. Use `references/unit-state-timeline.md`.
 8. Then write the story spine from the unit state timeline. Use `references/story-layer.md`.
 9. Write source units before the remake script. Do not jump directly to remapping.
@@ -52,6 +53,8 @@ When the user next asks for 每个镜头的开始帧, start frames, storyboard k
 ## Source Unit Rules
 
 Use stable IDs and include both object units and style units. Do not bury style in prose. A unit is not only an object; it is a stateful entity over time.
+
+Spoken copy is usually a sub-unit, not a free writing layer. For each important speaker, split voiceover/dialogue/subtitles into child units such as `P01.V01`. A copy child unit must state whose line it is, what state the speaker is in, what visible unit it is attached to, which post-edit text or sound reinforces it, what function it serves, and how it should be replaced. Do not convert the user's selling point directly into a polished ad sentence if the source speaker would not say it that way.
 
 Minimum categories:
 
@@ -105,6 +108,8 @@ When the source is story-driven, map story roles before mapping product units:
 
 Before mapping story roles, map unit states. If a character leaves, returns alone, becomes silent, becomes absent, moves behind the car, starts speaking offscreen, or appears only as a post-edit sticker, that state change is often the real story mechanism.
 
+Before writing remake copy, map copy child units. Preserve the original line's function and relationship graph before replacing words. Example: a measurement host's "我们征集了100个家庭常用的锅 / 就为了看看你们家用的那口" is not a generic hook; it is `sample source + test purpose` bound to sample visuals. Replace it with an equivalent action-based line such as "我们找了几种家里常见的发豆芽方法 / 就为了看看，想吃点养生豆芽，到底哪种发得稳", not with a detached selling-point line.
+
 ## Purple-Clay Sprouting Jar Baseline
 
 When the target product is the 紫砂水培罐, read `references/zisha-product-baseline.md`.
@@ -128,6 +133,7 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 - In visual scripts, the picture/frame column must be concise but not lossy: one sentence should say what the camera sees and any critical movement or missing unit. If a key movement such as "vehicle moves from front windshield to side window" is omitted, revise the shot.
 - The opening must be analyzed at higher resolution than the rest of the video.
 - BGM, voice style, subtitles, overall visual style, and edit rhythm must have unit IDs.
+- In host-led, acted, or sales-led sources, important spoken copy must be represented as speaker child units (`Pxx.Vxx`). If remake lines read like independent marketing copy rather than the source speaker's state-bound speech, revise before finalizing.
 - The remake must explain why it still feels like the source.
 - Avoid fake authority. Do not invent papers, certificates, patent claims, medical claims, product guarantees, or data.
 - Avoid absolute claims such as guaranteed success, 100%, safe, cures, lowers blood sugar, or disease benefits.

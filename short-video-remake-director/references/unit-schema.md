@@ -46,6 +46,17 @@ characters:
     power_position:
     knowledge_gap:
     expression_pattern:
+    child_units:
+      voiceover_copy:
+        - id:
+          time:
+          text:
+          speaker_state:
+          bound_units: []
+          bound_post_edit_units: []
+          rhythm:
+          function:
+          replacement_rule:
     remake_role:
 
 plot_beats:
@@ -130,6 +141,23 @@ For every important unit, capture:
 - `sensory_anchor`: true/false.
 - `remake_action`: keep/replace/delete/add/borrow-only.
 - `replacement_function`: when replaced, what sensory function the new unit must preserve.
+
+## Copy Child Unit Fields
+
+For host-led, role-led, sales-led, acted, or dialogue-heavy sources, model important spoken copy and subtitle copy as child units of the speaker/person unit:
+
+- `id`: stable child ID such as `P01.V01`.
+- `parent_unit`: speaker/person ID.
+- `time_range`: when the line appears.
+- `text`: source line or subtitle.
+- `speaker_state`: what state the speaker is in, such as investigating, refusing, discovering, proving, joking, closing.
+- `bound_units`: visual units the line depends on, such as sample array, prop, product close-up, proof table, user feedback.
+- `bound_post_edit_units`: subtitles, red words, big numbers, arrows, stickers, charts, SFX.
+- `rhythm`: phrase length, delivery style, pause, repetition, verdict style.
+- `function`: sample source, test purpose, conflict, discovery, proof explanation, mechanism explanation, reveal, close.
+- `replacement_rule`: what function and relationships must be preserved when remapping to the user's product.
+
+Do not write remake copy until these child units are mapped. A correct replacement preserves function and relationship first, then changes words.
 
 ## Unit State Fields
 
