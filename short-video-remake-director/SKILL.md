@@ -39,6 +39,8 @@ For a full trial, output artifacts in this order:
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
 
+When the user next asks for 每个镜头的开始帧, start frames, storyboard keyframes, or image-generation prompts from the approved visual script, hand off to `short-video-start-frame-director` instead of expanding this skill.
+
 ## Source Unit Rules
 
 Use stable IDs and include both object units and style units. Do not bury style in prose.

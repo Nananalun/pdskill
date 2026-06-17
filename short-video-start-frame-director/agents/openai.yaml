@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Video Start Frame Director"
+  short_description: "Turn remake scripts into source-matched shot start frames."
+  default_prompt: "Use $short-video-start-frame-director to generate start-frame prompts and reference mapping for each shot in this visual script."
