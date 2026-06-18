@@ -18,8 +18,12 @@ For scripted or semi-scripted videos, unit-state causality comes before story ca
 1. Confirm the source video path and product target.
 2. Read metadata with `ffprobe`.
 3. Run `scripts/prepare_video_evidence.py` to create frames, opening frames, tile images, audio, and waveform.
+   - Use low-resolution contact sheets for quick overview only. If the source relies on tiny subtitles, hand micro-actions, product edges, skin/texture, stickers, or rough tabletop proof, keep or regenerate higher-resolution reference frames before final judgment.
+   - On another computer, if `ffmpeg` or `ffprobe` is missing, install or locate them first instead of downgrading the workflow to text-only analysis.
 4. Inspect `overview_tile.jpg` and `opening_tile.jpg` before writing strategy.
 5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, copy tone, delivery style, pauses, BGM, SFX, live sound, silence, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request speaker attribution, presence/absence, plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
+   - Prefer structured field outputs or explicit timecoded rows. Avoid relying on a single freeform summary.
+   - If shell/terminal encoding corrupts Chinese prompts or paths, use an ASCII temporary path and an English structured prompt that requests Chinese output. Then cross-check against frames before trusting OCR or ASR.
 6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, speaker attribution, presence/absence, and plot causality.
    - For host-led, role-led, sales-led, or acted videos, treat spoken copy/subtitles as child units of the speaking person, not as standalone ad copy. Use IDs such as `P01.V01` and record the speaker identity, speaker state, bound visual evidence, bound prop/product/text units, tone, emotional temperature, delivery style, pace, pause pattern, rhythm, function, audio relation, subtitle relation, and replacement rule.
 7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a unit state timeline before the story spine. Use `references/unit-state-timeline.md`.
@@ -27,6 +31,225 @@ For scripted or semi-scripted videos, unit-state causality comes before story ca
 9. Write source units before the remake script. Do not jump directly to remapping.
 
 If TWE is unavailable, continue from local frames and mark the missing evidence.
+
+## Proven Full-Run Playbook
+
+This playbook is the actual workflow that produced acceptable results in prior tests. It freezes the method, not the creative template. Follow it as an execution recipe, not as optional advice, whenever the user says "跑这个视频", tests a new reference video, or asks for a high-similarity remake.
+
+Every source video is a new directing problem. Do not reuse the last video's spirit, structure, proof rhythm, copy style, scene grammar, or emotional temperature. A nail-clipper proof montage, a car-window role drama, a white-background authority edit, a pillow health-lifestyle montage, and a host-led price offer all require different unit priorities. The examples below illustrate how to preserve mechanisms after discovering them; they are not templates to apply to unrelated videos.
+
+### 0. Lock the task and product baseline
+
+- Confirm the source video path and the target product.
+- For 善砂坊紫砂水培育罐, read `references/zisha-product-baseline.md` before remapping.
+- Treat the product priority as:
+  1. Health/养生 mind: 家里自己发健康养生水培菜.
+  2. Result proof: 满满一罐发得好的水培菜 is the strongest conversion shot.
+  3. Structure proof: 紫砂、避光盖、压盘、沥水篦、接水托 explain why the result can happen.
+- Do not let the script drift into a usage tutorial unless the source itself is tutorial-led. Process is proof, not the lead selling point.
+
+### 1. Build evidence before judgment
+
+Run `scripts/prepare_video_evidence.py` and save outputs under a per-video output directory. Minimum evidence:
+
+- `metadata.json`
+- `overview_tile.jpg`
+- `opening_tile.jpg`
+- `frames/`
+- `opening_frames/`
+- `audio_16k_mono.wav`
+- `audio_waveform.png`
+
+For dense visual sources, also create and inspect time-sliced detail tiles. For audio-sensitive sources, run simple audio diagnostics such as silence detection, volume/rms summary, or waveform inspection. Record whether there are long silences, short pauses, loudness shifts, BGM changes, live sound, SFX, or voice texture changes.
+
+Do not write strategy from memory, from the user’s complaint, or from a single overview tile. Inspect frames first. If TWE disagrees with frames, the frames win unless the issue is audio-only.
+
+### 2. Run TWE as structured evidence, not as final judgment
+
+When TWE/TwelveLabs is available, prefer structured shot-level or time-based metadata fields over a freeform summary. Ask for dense segment fields like:
+
+- `visual_description`
+- `spoken_text`
+- `speaker_attribution`
+- `copy_tone_delivery`
+- `screen_text`
+- `people_casting_performance` or `people_hands`
+- `character_objective`
+- `plot_beat`
+- `presence_absence`
+- `actions_body_posture`
+- `facial_expression`
+- `product`
+- `product_state`
+- `scene_background`
+- `props`
+- `problem_visuals`
+- `proof_units`
+- `music`
+- `sound_sfx_live`
+- `audio_mix_timing`
+- `rhythm`
+- `camera`
+- `editing`
+- `post_edit_units`
+- `sensory_anchors`
+- `mechanism_vs_shell`
+- `uncertainty`
+
+Use 2-5 second segments when possible. Save:
+
+- request body
+- asset/task or provider ids if applicable
+- final raw response
+- parsed segment JSON
+- human-readable `09-twelvelabs-segment-summary.v1.md`
+
+If TWE returns too few segments, garbled OCR/ASR, or a generic summary, do not accept it. Use it only as a rough clue and manually reconstruct from local keyframes. If terminal encoding corrupts Chinese prompt/path handling, use an ASCII temporary path and an English structured prompt that requests timecoded output; then cross-check against local frames.
+
+### 3. Source reconstruction comes before product remap
+
+Before writing any remake script, produce a source-only reconstruction. The reader should be able to understand what happened in the original without seeing the video.
+
+Required source reconstruction:
+
+- Whole-video spirit in one sentence.
+- Structure blocks with time range, purpose, visible evidence, audio/copy evidence, and why each block exists.
+- Unit state timeline with stable IDs.
+- Source unit summary review.
+- Structured source graph.
+- Mechanism-vs-shell judgment.
+
+For non-story proof videos, the "story" is still a proof engine. Capture the sequence of proof pressure, not only objects. For example, in a nail-clipper source this may be pain close-up -> ordinary tool failure -> dedicated tool structure -> repeated proof benches -> material/accessory proof -> pain callback -> CTA. In another source, the engine may instead be role conflict, quiet authority, lifestyle aspiration, family testimony, price shock, sensory comfort, white-background rhythm, or BGM-led pacing. Discover the engine from evidence each time.
+
+### 4. Unit-state timeline is not a static inventory
+
+Write units as stateful entities over time. Include at least:
+
+- People/hands/casting: real foot, hand model, white glove, host, family member, offscreen speaker.
+- Product/tool states: absent, introduced, failed, compared, opened, used, cleaned, packaged, converted into price prop.
+- Problem visuals: what physically looks wrong or uncomfortable.
+- Proof props: reports, skeletons, ordinary containers, water, paper towel, sprouting result, packaging, date cards.
+- Scene/background states: brown tabletop, white test table, black grid desk, kitchen, bed, factory, live room.
+- Post-edit units: title bars, yellow bars, corner stickers, subtitles, arrows, red circles, dotted lines, warning signs, price cards.
+- Audio units: BGM, voice, SFX, live sound, silence, mix density.
+- Camera/editing units: macro, top-down, handheld, fixed phone close-up, fast cut, repeated return.
+
+Track each important unit's presence/absence, position, action, state change, relation to other units, and function. If looking only at this timeline cannot reconstruct the video, the analysis is not detailed enough.
+
+### 5. Copy and audio are child units, not decorative text
+
+Every important spoken/subtitle line must be attached to the unit that carries it. Record:
+
+- parent speaker or narrator
+- speaker state
+- bound visual units
+- bound post-edit units
+- tone
+- emotional temperature
+- pace
+- pause pattern
+- volume or pressure
+- BGM/SFX relation
+- subtitle relation
+- function
+- replacement rule
+
+When remapping copy, preserve the line's source function before changing words. Do not convert a source-style short judgment or proof line into generic polished ad copy.
+
+Audio units are equal to visual units. Record the role of BGM, live sound, SFX, silence, voice texture, and audio mix. If the source feels calm, sparse, and authoritative, do not remake it as excited shouting. If the source feels urgent, dense, and live-commerce-like, the remake must carry that pressure through delivery and subtitle rhythm.
+
+### 6. Identify spirit through sensory anchors
+
+Name the few units that make the source feel like itself. These are hard to delete:
+
+- camera distance and roughness
+- background type
+- performer casting, posture, gaze, hand behavior
+- subtitle shape and density
+- BGM mood and pressure
+- voice delivery
+- proof staging
+- repeated visual returns
+- conversion-shot layout
+- stickers/overlays when they define the source style
+
+If deleting a sensory anchor, state the incompatibility and replace its function with an equivalent sensory unit. Do not delete it silently.
+
+### 7. Remap every category, not only the product
+
+Build the remake-side unit inventory before scripting:
+
+- target product/product states
+- people/hands available
+- scenes/backgrounds
+- ordinary/failure comparison objects
+- proof props
+- result shots
+- subtitles/stickers/overlay rules
+- BGM/SFX/live sound
+- camera/editing style
+- compliance boundaries
+
+Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`. Each row should cite source unit IDs and explain the reason. For 善砂坊, possible replacements include the examples below, but only use the ones that fit the current source's discovered mechanism:
+
+- body/tool pain shells can become failed home sprouting visuals only when the source relies on problem close-ups.
+- product/tool structure shells can become purple-clay jar structure only when the source relies on mechanism proof.
+- instant proof shells can become open-lid full jar, hand grabs dense sprouts, drainage works, or tray water poured away only when the source uses action proof.
+- accessory/value shells can become five-piece set, cleaning, packaging, family table, or finished dish only when the source sells through completeness/value.
+- live-commerce pressure can become real price `149` and truthful live-room/CTA only when the source's ending is conversion-pressure-led.
+- If the source's core is casting, relationship, quiet authority, BGM melody, white background, sparse short phrases, or role power, preserve those sensory functions first and choose different remake-side units.
+
+### 8. Director brief before visual script
+
+Before the shot table, write a director brief:
+
+- core mind
+- opening conflict
+- unit-state engine
+- proof engine or story engine
+- main conversion-shot group
+- proof method
+- visual style
+- audio style
+- what to delete
+- what to preserve for sensory similarity
+- what would make the remake become generic
+
+If this brief cannot clearly explain why the remake still feels like the source, do not write the script yet.
+
+### 9. Visual script must be shootable and source-faithful
+
+For each shot, include:
+
+- shot id and time range
+- source alignment
+- one clear picture/action sentence that says what the camera sees
+- people/hands state
+- product/prop state
+- spoken text/subtitle
+- delivery style
+- BGM/SFX/live sound/overlay state
+- psychological beat
+
+The picture/action sentence should be concise but not lossy. It must include key spatial movement, foreground/background, product/prop entry, absence/return, and post-edit unit if it changes meaning.
+
+Do not write conceptual frames such as "show health", "prove quality", or "display structure". Say what the camera sees: "普通塑料盒里水积在底部，稀疏豆芽贴着盒底，手晃盒子让浑水反光."
+
+### 10. Review against failure modes
+
+Before finalizing, explicitly check:
+
+- Did the main selling point stay health/养生 for 善砂坊?
+- Is the main conversion shot still 满满一罐发得好的水培菜?
+- Did process/structure stay proof instead of becoming the main story?
+- Does the script preserve the source's camera/background/subtitle/audio/proof rhythm?
+- Did copy inherit source tone and function, or become generic ad copy?
+- Are BGM, voice style, SFX, live sound, and pauses represented?
+- Are post-edit units represented as units, not vague "字幕"?
+- Are product claims within the baseline and compliance boundaries?
+- Would the user recognize which source video this remake came from?
+
+If any answer fails, revise before final response.
 
 ## Required Output Order
 
@@ -48,7 +271,7 @@ Prefer writing these to files when the run is substantial. Use concise final cha
 
 Visual script picture descriptions should stay lightweight but complete. Use one clear sentence for the frame/action column, not a heavy start/middle/end breakdown, but include any key spatial move, absence/return, foreground/background, product/prop entry, and post-edit sticker that changes the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
 
-When the user next asks for 每个镜头的开始帧, start frames, storyboard keyframes, or image-generation prompts from the approved visual script, hand off to `short-video-start-frame-director` instead of expanding this skill.
+When the user next asks for 每个镜头的开始帧, start frames, storyboard keyframes, image-generation prompts, or video-model first frames from the approved visual script, stop using this skill as the executor and hand off to `short-video-start-frame-director`. The remake script is only Stage A. Stage B must produce source maps, prompt packages, base images, overlay plans, generated frames when possible, and QC.
 
 ## Source Unit Rules
 

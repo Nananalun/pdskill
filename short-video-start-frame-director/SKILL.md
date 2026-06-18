@@ -26,6 +26,39 @@ Expected inputs, accepting partial data with uncertainty:
 
 For purple-clay sprouting jar work, product priority is health/养生 and process visibility. Result proof is secondary unless the user says otherwise.
 
+## Cross-Machine Runbook
+
+Use this checklist when this skill is installed on another computer or a fresh Codex workspace. The usual failure mode is stopping at the remake script or producing poster-like images without source-frame fidelity.
+
+1. Verify the installed skill set
+   - `short-video-remake-director` is for analysis and visual scripts.
+   - `short-video-start-frame-director` is for start-frame packages and generated keyframes.
+   - If the user asks for 首帧图, start frames, story keyframes, or image prompts from an existing script, use this skill, not the remake-director skill.
+
+2. Verify evidence quality before generating
+   - The evidence directory must contain `metadata.json`, `overview_tile.jpg`, `opening_tile.jpg`, `frames/`, and `opening_frames/`.
+   - Do not rely only on low-resolution `216x384` frames for final start-frame decisions. Low-res contact sheets are acceptable for overview, but each generated shot must cite and inspect a usable source reference frame. If the source frame is too small or blurry to preserve camera language, regenerate higher-resolution frames before prompting images.
+   - For opening shots and dense proof shots, inspect `opening_frames` or the closest full frame, not only the overview tile.
+
+3. Keep the two-stage handoff
+   - Stage A: remake director produces the approved visual script.
+   - Stage B: this skill converts each approved shot into source map, prompt package, generated base image, overlay plan, and QC.
+   - Do not treat `13-visual-script.v1.md` as the final start-frame output.
+
+4. Keep base image and overlays separate
+   - Generate the physical scene first: hands, props, product state, background, light, roughness, and action state.
+   - Add digital overlays afterward or describe them in `overlay_plan`.
+   - Do not ask the image model to render Chinese subtitles, activity bars, corner badges, price tags, or dense stickers unless the text is a physical prop in the scene. This prevents garbled text and prevents overlays from covering the product.
+
+5. Inspect and revise generated images
+   - View every generated frame before finalizing.
+   - If the user asks to remove or adjust overlays, create a versioned file such as `G03-start-v2.png`; do not overwrite the earlier image unless explicitly requested.
+   - Reject images that look like polished ads when the source is rough UGC/live-commerce, or that become generic product posters instead of preserving the source frame language.
+
+6. Record what happened
+   - Save the source map, manifest, prompts, and QC files beside the generated frames.
+   - If a product-sensitive frame was generated without actual product reference images available to the image model, mark it as `text-locked only` and do not claim product fidelity.
+
 ## Workflow
 
 1. Confirm the script and evidence
@@ -37,6 +70,8 @@ For purple-clay sprouting jar work, product priority is health/养生 and proces
    - Use `scripts/prepare_start_frame_workspace.py` when there is a Markdown visual script and a local evidence directory.
    - The script creates `shot_manifest.json`, per-shot folders, and nearest source-frame copies.
    - Treat its output as a starting point. Manually correct source frame selection when the nearest timestamp is not the best visual reference.
+   - If the nearest source frame is a poor visual reference, choose a better frame from `opening_frames/` or `frames/` and document the manual override in `20-start-frame-source-map.v1.md`.
+   - If only low-resolution frames are available and the shot depends on tiny text, hands, props, product edges, or rough texture, regenerate evidence before creating final prompts.
 
 3. Map source frame to remake frame
    For each shot, define:
@@ -50,6 +85,7 @@ For purple-clay sprouting jar work, product priority is health/养生 and proces
    - Base start frames should normally avoid burned-in digital subtitles, counters, and stickers. Add these as an overlay plan.
    - Physical text that exists in the scene, such as a date sticker, usage card, price tag, or package label, can be inside the image if it is central to the proof.
    - If the source's identity depends on digital overlays, preserve their layout in `overlay_plan`, not by forcing the image model to render clean Chinese text.
+   - When the user later asks to remove top bars, edge stickers, corner stickers, or other overlay units, regenerate or composite a new version from the base image. Do not regenerate the whole physical scene unless the base scene itself is wrong.
 
 5. Generate start-frame prompt packages
    For each shot, output:
@@ -66,6 +102,15 @@ For purple-clay sprouting jar work, product priority is health/养生 and proces
    - If an image generation tool is available and can use the product references/source frame references, generate the frames.
    - If the tool cannot receive references, do not generate final product-sensitive frames by text alone unless the user explicitly accepts text-only visual locking.
    - After generation, inspect every image. Reject frames that drift from source framing, product shape/material, sprouts state, or shot purpose.
+   - For non-product problem frames, such as failed ordinary containers, competitor shells, or setup shots, generation can proceed without product references if the frame does not show the target product. State this in the source map.
+   - When using an image generator that saves to a default generated-images directory, copy the selected image into the shot folder and leave the original in place.
+   - Prefer stable names: `Gxx-base.png` for the generated physical scene, `Gxx-start.png` for the composited start frame, and `Gxx-start-v2.png` for user-requested revisions.
+
+7. Run visual QC and revise
+   - Inspect the generated frame in the conversation or image viewer.
+   - Check source similarity, shot purpose, product truth, overlay placement, text readability, and whether the image can be used as a video model start frame.
+   - Write `23-start-frame-qc.v1.md` with pass/fail notes and residual risks.
+   - If the result fails, revise the prompt or overlay and regenerate before final response.
 
 ## Purple-Clay Sprouting Jar Start-Frame Rules
 
@@ -88,6 +133,14 @@ For full work, output files in this order:
 
 If images are actually generated, place them in a `start-frames/` folder with stable names such as `G01-start.png`, `G02-start.png`.
 
+For partial work on only a few shots, still output the same artifact types in the shot workspace:
+
+1. `20-start-frame-source-map.v1.md`
+2. `21-start-frame-manifest.v1.json`
+3. `22-start-frame-prompts.v1.md`
+4. `23-start-frame-qc.v1.md`
+5. `shots/Gxx/Gxx-base.png` and `shots/Gxx/Gxx-start.png` when images are generated.
+
 ## Quality Gates
 
 - Every generated frame must cite a source frame or explain why it intentionally diverges.
@@ -95,6 +148,9 @@ If images are actually generated, place them in a `start-frames/` folder with st
 - Every shot must separate base image content from overlays.
 - Do not add pretty props, clean studio lighting, or cinematic backgrounds if the source video's trust comes from rough street reality.
 - The first-frame set must look like the same video after remapping, not like disconnected product posters.
+- A result is incomplete until generated images have been visually inspected. File creation alone is not enough.
+- Chinese subtitles, activity bars, corner stickers, and price labels should be deterministic overlays unless the user explicitly wants them baked into the image model output.
+- If another computer produces lower quality, first check whether it skipped this skill, used only low-resolution evidence, asked the image model to render Chinese overlays directly, or skipped visual QC.
 
 ## Resources
 
