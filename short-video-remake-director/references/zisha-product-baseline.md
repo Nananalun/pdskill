@@ -1,30 +1,41 @@
-# 紫砂水培罐产品基准
+# 善砂坊紫砂水培育罐产品基准
 
-Use this reference when the remake target is the purple-clay hydroponic sprouting jar.
+Use this reference when the remake target is the 善砂坊紫砂水培育罐.
 
 ## Selling Priority
 
 1. Health/养生 mind:
-   - 家里自己发健康养生豆芽.
-   - 紫砂/红泥/陶质带来天然、传统、厨房可信感.
+   - 家里自己发健康养生水培菜; 豆芽只是高频代表之一, not the only result.
+   - 紫砂材质带来天然、传统、厨房可信感.
    - 新鲜现发, 绿色生活/健康营养.
    - 给老人、孩子、家里人吃更像日常养生小菜.
    - 只用豆子和清水, with a strong "0 添加/0 污染" feeling.
    - 过程看得见/可记录只能作为健康养生的辅助证据, not the headline selling point.
+   - 最强转化画面是满满一罐发得很好的水培菜, not the tool itself and not a usage tutorial.
 
-2. Structure/material proof:
+2. Result display:
+   - 满满一罐发得好的水培菜 is the main visual proof and conversion shot.
+   - Show dense, fresh-looking, upright, abundant growth in the jar; include bean sprouts, bean seedlings, and other truly shootable hydroponic greens when available.
+   - A spread of several finished water-grown vegetables is stronger than repeating only bean sprouts.
+   - The audience should first feel "这罐发得真好, 家里能吃上养生小菜", then understand the structure.
+
+3. Structure/material proof:
    - 全隔水设计: 豆芽不烂根.
    - 压盘: 模拟土壤压力, 均匀受力, 豆芽更壮、更齐.
    - 避光盖: 豆芽类全程避光, reduces visible greening risk.
    - 篦子/沥水/储水托盘: water drains away instead of soaking beans; 接水盘不可存水.
    - 紫砂微孔/会呼吸: 拒绝塑料异味, gives non-plastic, natural vessel trust.
 
-3. Result proof:
+4. Process proof:
+   - 使用教程/步骤 is not the selling point. Use it only as proof for why the result can happen.
+   - Do not lead with how to use the tool unless the source video's exact mechanism requires a tutorial hook.
+
+5. Result proof:
    - 出芽率高 as a visual proof, not a bare promise.
    - 4-6 天开盖收获豆芽; 豆苗 6-12 天.
-   - 成品: white/clean-looking, plump, upright, large quantity, crisp in cooking/eating.
+   - 成品: 满满一罐, fresh-looking, dense/upright, large quantity, crisp in cooking/eating when the crop supports it.
 
-The main story is not "a convenient sprouting tool," not "visible process," and not only "sprouts grow stronger." The main story is: self-sprouting in a natural-feeling purple-clay jar is a healthier/养生 family food habit; visible process and structure are supporting proof, not the main message.
+The main story is not "a convenient sprouting tool," not "visible process," not a usage tutorial, and not only "sprouts grow stronger." The main story is: self-growing healthy/养生 water-grown vegetables in a purple-clay jar gives the family a fresh daily养生小菜; the full-jar finished result is the strongest proof, while visible process and structure are supporting proof.
 
 ## Product Structure Facts
 
@@ -42,11 +53,12 @@ The main story is not "a convenient sprouting tool," not "visible process," and 
 - Lid closed for light blocking.
 - Water drained into tray.
 - Tray water poured away; no standing water.
-- Open-lid full jar result.
+- Open-lid full jar result: 满满一罐发得好的水培菜.
+- Finished-result variety: bean sprouts, bean seedlings, and other truly available hydroponic greens shown as a result collection.
 - Ordinary container vs purple-clay jar comparison with the same amount of beans.
 - Crispness: hand breaks a sprout, chopsticks lift sprouts, stir-fry sound, family eating.
-- Clay material: close-up surface, lid tap, hand touch.
-- Non-plastic material contrast: red clay jar vs plastic container, framed as material preference rather than toxic attack.
+- Purple-clay material: close-up surface, lid tap, hand touch.
+- Non-plastic material contrast: purple-clay jar vs plastic container, framed as material preference rather than toxic attack.
 
 ## Safe Wording
 
@@ -54,17 +66,19 @@ Use:
 
 - 自己发.
 - 健康养生.
-- 自家发养生豆芽.
-- 天然陶质感.
+- 自家发养生水培菜.
+- 满满一罐发得好的水培菜.
+- 紫砂材质感.
 - 看得见, only as proof copy, not as the main hook.
 - 吃着更踏实/更放心.
 - 只用豆子和清水.
 - 0 添加/0 污染/0 难度 as a material-derived product phrase, preferably supported by process visuals.
-- 天然陶质感.
+- 紫砂材质感.
 - 拒绝塑料异味.
 - 全隔水设计, 豆芽不烂根.
 - 模拟土壤压力, 豆芽更壮.
 - 家里发一罐.
+- 发得满满一罐.
 - 更容易发成.
 - 白净、粗壮、整齐、脆.
 

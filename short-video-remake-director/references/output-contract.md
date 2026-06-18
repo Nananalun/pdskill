@@ -28,6 +28,8 @@ Must include:
 - Story spine summary when the source is scripted or conflict-led.
 - Timeline structure blocks.
 - Unit summary table.
+- Copy delivery table: important spoken/subtitle lines with speaker, tone, emotional temperature, delivery style, pace, pause, BGM/SFX/subtitle relation, and uncertainty.
+- Audio unit table: BGM, live sound, SFX, silence, voice texture, and audio mix with time range, mood, intensity, function, bound visual/copy units, and replacement rule.
 - Mechanism-to-preserve table.
 - Shell-to-change table.
 - Omissions/uncertainties.
@@ -41,7 +43,8 @@ Must include:
 - Unit list: people, products, props, scene frames, post-edit text/stickers, BGM, live sound, camera/editing units.
 - Per-time state table: each important unit's presence/absence, position, speaker status, action, expression, product state, and relation to other units.
 - Speaker attribution table: every important spoken/subtitle line mapped to a likely speaker, with uncertainty.
-- Speaker child-unit table for host-led, acted, sales-led, or dialogue-heavy videos: each important spoken/subtitle line should have an ID such as `P01.V01`, parent speaker, speaker state, bound visual units, bound post-edit units, rhythm, function, and replacement rule.
+- Speaker child-unit table for host-led, acted, sales-led, or dialogue-heavy videos: each important spoken/subtitle line should have an ID such as `P01.V01`, parent speaker, speaker state, tone, emotional temperature, delivery style, pace, volume, pause pattern, bound visual units, bound post-edit units, BGM/SFX relation, subtitle relation, rhythm, function, remake delivery rule, and replacement rule.
+- Audio-state table: BGM, live sound, SFX, silence, voice texture, and mix changes that alter emotion, rhythm, authority, comedy timing, or conversion pressure.
 - Relationship changes: who blocks whom, who leaves, who returns, who becomes absent, who gains/loses power, which post-edit unit changes the meaning.
 - Event chain derived only from state changes.
 - Contradiction check: any apparent conflict between TWE/OCR, subtitles, frame evidence, and inferred story.
@@ -70,7 +73,8 @@ Must include:
 - Unit state mapping before story role mapping.
 - Story role mapping before product unit mapping.
 - Source-to-remake unit mapping.
-- Copy child-unit mapping before final script lines. Preserve the line's function and bound units before changing the words.
+- Copy child-unit mapping before final script lines. Preserve the line's function, bound units, tone, delivery style, emotional temperature, pause, and audio/subtitle relation before changing the words.
+- Audio-unit mapping before final script lines. Preserve BGM/SFX/live-sound/silence functions that create the source's pressure, authority, joke timing, proof rhythm, or conversion push.
 - Compliance/fact boundary.
 - Deletion and addition choices.
 
@@ -86,7 +90,9 @@ Each shot must specify:
 - People positions, posture, gaze, expression, gesture.
 - Product/prop state and hand actions.
 - Subtitle and spoken text.
-- BGM/live sound/SFX.
+- Spoken delivery style: tone, emotional temperature, pace, pause, and volume when relevant.
+- BGM/live sound/SFX/silence and their relation to the spoken line.
+- Subtitle rhythm and whether it mirrors, compresses, exaggerates, or adds to the spoken line.
 - Intended psychological beat.
 
 The picture/frame field should be one clear sentence, not a heavy multi-part breakdown, but it must not omit key units. Include critical spatial movement, who is present or absent, foreground/background frame, product/prop entry, and post-edit text/stickers when they affect the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
@@ -94,3 +100,5 @@ The picture/frame field should be one clear sentence, not a heavy multi-part bre
 Avoid conceptual shots such as "show health" or "prove quality." Say what the camera sees.
 
 For host-led, acted, or sales-led videos, each important spoken line should align to a source copy child unit (`Pxx.Vxx`) or a clearly added remake-only unit. If the line can stand alone as generic ad copy, it is probably not source-faithful enough.
+
+If the words are visible but the tone cannot be inferred, mark the delivery as uncertain and state what evidence is missing. Do not replace an uncertain source delivery with generic enthusiasm.

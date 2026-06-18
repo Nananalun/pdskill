@@ -52,10 +52,19 @@ characters:
           time:
           text:
           speaker_state:
+          tone:
+          emotional_temperature:
+          delivery_style:
+          pace:
+          volume:
+          pause_pattern:
           bound_units: []
           bound_post_edit_units: []
+          audio_relation:
+          subtitle_relation:
           rhythm:
           function:
+          remake_delivery_rule:
           replacement_rule:
     remake_role:
 
@@ -151,13 +160,40 @@ For host-led, role-led, sales-led, acted, or dialogue-heavy sources, model impor
 - `time_range`: when the line appears.
 - `text`: source line or subtitle.
 - `speaker_state`: what state the speaker is in, such as investigating, refusing, discovering, proving, joking, closing.
+- `tone`: calm, cold, warm, excited, teasing, annoyed, authoritative, anxious, urgent, intimate, flat, or uncertain.
+- `emotional_temperature`: low/medium/high pressure, restrained/explosive, friendly/hostile, detached/involved.
+- `delivery_style`: how the line is performed, such as short verdict, clipped phrases, flowing explanation, sales push, deadpan, whisper, shout, tease, complaint, expert explanation.
+- `pace`: slow/medium/fast and whether the line accelerates or slows down.
+- `volume`: low/normal/loud and whether it changes.
+- `pause_pattern`: where the speaker pauses, breathes, repeats, or lets BGM/SFX fill the gap.
 - `bound_units`: visual units the line depends on, such as sample array, prop, product close-up, proof table, user feedback.
 - `bound_post_edit_units`: subtitles, red words, big numbers, arrows, stickers, charts, SFX.
+- `audio_relation`: BGM/SFX/live-sound/silence units that reinforce or contrast with the line.
+- `subtitle_relation`: whether subtitles mirror the line, compress it, exaggerate it, turn it into a verdict, or add new information.
 - `rhythm`: phrase length, delivery style, pause, repetition, verdict style.
 - `function`: sample source, test purpose, conflict, discovery, proof explanation, mechanism explanation, reveal, close.
+- `remake_delivery_rule`: what speaking style, pressure, pace, pause, and audio relation must survive in the remake.
 - `replacement_rule`: what function and relationships must be preserved when remapping to the user's product.
 
 Do not write remake copy until these child units are mapped. A correct replacement preserves function and relationship first, then changes words.
+
+If the text can be read but the delivery cannot be inferred, mark tone/delivery fields as `uncertain` and name the missing evidence. Do not overwrite uncertainty with generic enthusiasm.
+
+## Audio Unit Fields
+
+Create audio units whenever sound affects the source's spirit or pacing:
+
+- `id`: stable ID such as `A01`.
+- `type`: BGM, live_sound, SFX, silence, voice_texture, audio_mix.
+- `time_range`: where the audio unit appears or changes.
+- `mood`: tense, playful, calm, premium, authoritative, comic, urgent, sentimental, neutral, or uncertain.
+- `tempo`: slow/medium/fast or approximate BPM if known.
+- `intensity`: low/medium/high, including rises, drops, stingers, or silence breaks.
+- `function`: hook pressure, authority, comedy timing, proof rhythm, transition, conversion push, realism, contrast.
+- `state_changes`: time-coded changes such as BGM enters, beat drops, SFX hits, volume ducks under voice, silence before reveal.
+- `bound_visual_units`: visual units the sound supports.
+- `bound_copy_units`: copy child units the sound supports.
+- `replacement_rule`: how the remake should preserve the same sound function without copying category-specific claims.
 
 ## Unit State Fields
 
@@ -177,7 +213,10 @@ The timeline is not a summary. It is the source of truth used to derive story be
 Always create IDs for:
 
 - BGM or music function.
-- Voice/spoken style.
+- BGM state changes and music-to-cut rhythm.
+- Voice/spoken style, including tone, emotional temperature, pace, volume, and pause pattern.
+- Audio mix or loudness pattern when it shapes the viewing experience.
+- Silence when it marks a joke, reveal, authority beat, or conversion pressure.
 - Subtitle rhythm and visual style.
 - Whole-video visual texture.
 - Editing density.

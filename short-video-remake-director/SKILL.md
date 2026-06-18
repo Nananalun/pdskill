@@ -1,6 +1,6 @@
 ---
 name: short-video-remake-director
-description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 单元状态时间线, 说话人归属, 在场/缺席时间线, high-similarity scripts, 编导策略, 拍摄单, or remap a reference video to a product such as 紫砂水培罐 while preserving sensory similarity instead of producing generic scripts.
+description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 单元状态时间线, 说话人归属, 在场/缺席时间线, high-similarity scripts, 编导策略, 拍摄单, or remap a reference video to a product such as 善砂坊紫砂水培育罐 while preserving sensory similarity instead of producing generic scripts.
 ---
 
 # Short Video Remake Director
@@ -19,9 +19,9 @@ For scripted or semi-scripted videos, unit-state causality comes before story ca
 2. Read metadata with `ffprobe`.
 3. Run `scripts/prepare_video_evidence.py` to create frames, opening frames, tile images, audio, and waveform.
 4. Inspect `overview_tile.jpg` and `opening_tile.jpg` before writing strategy.
-5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, BGM, SFX, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request speaker attribution, presence/absence, plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
+5. If TwelveLabs/TWE is available, run it with fields for people, actions, expression, product, scene, proof, screen text, spoken text, copy tone, delivery style, pauses, BGM, SFX, live sound, silence, camera, editing, visual texture, sensory anchors, and mechanism-vs-shell. For acted content, also request speaker attribution, presence/absence, plot beats, character objective, conflict, reversal, joke/payoff, and product-bridge fields. Treat TWE as evidence, not final judgment.
 6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, speaker attribution, presence/absence, and plot causality.
-   - For host-led, role-led, sales-led, or acted videos, treat spoken copy/subtitles as child units of the speaking person, not as standalone ad copy. Use IDs such as `P01.V01` and record the speaker identity, speaker state, bound visual evidence, bound prop/product/text units, rhythm, function, and replacement rule.
+   - For host-led, role-led, sales-led, or acted videos, treat spoken copy/subtitles as child units of the speaking person, not as standalone ad copy. Use IDs such as `P01.V01` and record the speaker identity, speaker state, bound visual evidence, bound prop/product/text units, tone, emotional temperature, delivery style, pace, pause pattern, rhythm, function, audio relation, subtitle relation, and replacement rule.
 7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a unit state timeline before the story spine. Use `references/unit-state-timeline.md`.
 8. Then write the story spine from the unit state timeline. Use `references/story-layer.md`.
 9. Write source units before the remake script. Do not jump directly to remapping.
@@ -56,6 +56,10 @@ Use stable IDs and include both object units and style units. Do not bury style 
 
 Spoken copy is usually a sub-unit, not a free writing layer. For each important speaker, split voiceover/dialogue/subtitles into child units such as `P01.V01`. A copy child unit must state whose line it is, what state the speaker is in, what visible unit it is attached to, which post-edit text or sound reinforces it, what function it serves, and how it should be replaced. Do not convert the user's selling point directly into a polished ad sentence if the source speaker would not say it that way.
 
+A spoken line is incomplete if it only records "what it means." It must also record how it is said: calm or heated, cold or friendly, flat or teasing, authoritative or casual, short-phrase verdict or flowing explanation, fast or slow, loud or low, where it pauses, and whether BGM/SFX/subtitles carry the pressure. The remake line must inherit the source line's speaking function and emotional temperature before changing the words.
+
+Audio units are equal to visual units. BGM, live sound, SFX, silence, voice texture, and the audio mix must have IDs when they affect the source's spirit. Track their time range, mood, tempo, intensity, state changes, and what visual/copy units they bind to. If the source relies on calm BGM plus sparse short phrases, do not remake it into excited sales talk. If the source relies on urgent pressure, the remake copy must keep that pressure through delivery, not only through meaning.
+
 Minimum categories:
 
 - People/casting: role, age/identity signal, clothing, status, power position, expression, gaze, posture, gesture sequence.
@@ -65,7 +69,7 @@ Minimum categories:
 - Problem visuals: failure texture, fear image, before state, unpleasant close-up, contradiction.
 - Proof: reports, papers, certificates, lab, maps, comparisons, user feedback, before/after, social proof.
 - Text/graphics: subtitles, title bars, lower thirds, red X, explosion words, highlighter, maps, diagrams, stickers, price.
-- Audio: BGM mood/tempo/function, voice style, live sound, SFX, transition sounds, silence.
+- Audio: BGM mood/tempo/function, voice style, tone, emotional temperature, pace, volume, pause pattern, live sound, SFX, transition sounds, silence, audio mix.
 - Camera/editing: frame size, angle, movement, picture-in-picture, montage, cut density, repeated return pattern.
 - Whole-video style: news, medical, UGC, white authority, role drama, street interview, premium lab, rough realness.
 - Sensory anchors: the few units that make the source feel like itself.
@@ -108,18 +112,19 @@ When the source is story-driven, map story roles before mapping product units:
 
 Before mapping story roles, map unit states. If a character leaves, returns alone, becomes silent, becomes absent, moves behind the car, starts speaking offscreen, or appears only as a post-edit sticker, that state change is often the real story mechanism.
 
-Before writing remake copy, map copy child units. Preserve the original line's function and relationship graph before replacing words. Example: a measurement host's "我们征集了100个家庭常用的锅 / 就为了看看你们家用的那口" is not a generic hook; it is `sample source + test purpose` bound to sample visuals. Replace it with an equivalent action-based line such as "我们找了几种家里常见的发豆芽方法 / 就为了看看，想吃点养生豆芽，到底哪种发得稳", not with a detached selling-point line.
+Before writing remake copy, map copy child units. Preserve the original line's function, relationship graph, delivery style, and emotional temperature before replacing words. Example: a measurement host's "我们征集了100个家庭常用的锅 / 就为了看看你们家用的那口" is not a generic hook; it is `sample source + test purpose` bound to sample visuals, said with a specific pace and proof-seeking posture. Replace it with an equivalent action-based line such as "我们找了几种家里常见的水培菜培育方式 / 就为了看看，想在家吃点养生水培菜，到底哪种发得稳", not with a detached selling-point line.
 
 ## Purple-Clay Sprouting Jar Baseline
 
-When the target product is the 紫砂水培罐, read `references/zisha-product-baseline.md`.
+When the target product is the 善砂坊紫砂水培育罐, read `references/zisha-product-baseline.md`.
 
 Default selling priority for this product:
 
-1. Health/养生 mind: self-sprouted at home, visible process, natural clay feel, more reassuring for family meals.
-2. Result proof: pressure plate, light blocking, drainage, and clay structure help sprouts grow cleaner-looking, stronger, straighter, and crisper.
+1. Health/养生 mind: self-grown water-cultivated vegetables at home, natural purple-clay feel, more reassuring for family meals.
+2. Result display: the strongest conversion shot is a full jar of well-grown water-cultivated vegetables; bean sprouts are one common result, not the whole category.
+3. Proof support: usage steps, pressure plate, light blocking, drainage, and clay structure are evidence for the result, not the main selling point.
 
-Do not lead with "easy tool" unless the user asks. Lead with health/养生 and use structure as proof.
+Do not lead with "easy tool" or a usage tutorial unless the user asks. Lead with health/养生 and full-jar result display, then use structure and process as proof.
 
 ## Quality Gates
 
@@ -134,6 +139,8 @@ Do not lead with "easy tool" unless the user asks. Lead with health/养生 and u
 - The opening must be analyzed at higher resolution than the rest of the video.
 - BGM, voice style, subtitles, overall visual style, and edit rhythm must have unit IDs.
 - In host-led, acted, or sales-led sources, important spoken copy must be represented as speaker child units (`Pxx.Vxx`). If remake lines read like independent marketing copy rather than the source speaker's state-bound speech, revise before finalizing.
+- If a source line's tone, delivery style, pace, pause, emotional temperature, BGM relation, or subtitle relation is missing, the copy unit is not ready for remapping. If the tone cannot be inferred from evidence, mark it as uncertain instead of filling in generic enthusiasm.
+- The visual script must carry audio with the shot: spoken text plus delivery style, BGM state, live sound/SFX, silence if meaningful, and subtitle rhythm. A script that preserves pictures but loses speaking style or music pressure is not source-faithful.
 - The remake must explain why it still feels like the source.
 - Avoid fake authority. Do not invent papers, certificates, patent claims, medical claims, product guarantees, or data.
 - Avoid absolute claims such as guaranteed success, 100%, safe, cures, lowers blood sugar, or disease benefits.
