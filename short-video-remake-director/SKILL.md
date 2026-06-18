@@ -13,6 +13,8 @@ Sensory similarity comes before theory. The audience feels casting, posture, cam
 
 For scripted or semi-scripted videos, unit-state causality comes before story causality. Do not treat units as a static inventory. First track each important unit across time: whether it is present, absent, speaking, silent, moving, refusing, returning, proving, being revealed, or becoming a conversion prop. The story spine must be derived from this state timeline.
 
+Unit replacement must go one layer deeper than surface similarity. A scene, prop, person, line, sticker, or sound is not portable just because it looks like a sensory anchor. First identify why that unit exists, which other units it depends on, what proof pressure or story pressure it creates for the source product, and what equivalent pressure field the target product needs. Only then decide whether to keep, replace, delete, or borrow its function.
+
 ## Evidence Workflow
 
 1. Confirm the source video path and product target.
@@ -175,7 +177,30 @@ Name the few units that make the source feel like itself. These are hard to dele
 
 If deleting a sensory anchor, state the incompatibility and replace its function with an equivalent sensory unit. Do not delete it silently.
 
-### 7. Remap every category, not only the product
+### 7. Remap by relationship depth, not surface shape
+
+Before making the remake-side inventory, run a relationship-depth check for the source's most important units. This is mandatory for scene/background units, proof props, comparison objects, spoken hooks, and any sensory anchor that looks tempting to copy.
+
+For each important source unit, write:
+
+- `surface_unit`: what is visible or audible.
+- `source_relationships`: which people, product states, props, text, camera, audio, and edits it is bound to.
+- `source_pressure_field`: the condition that makes this unit necessary. For example, a flashlight video needs darkness because darkness makes brightness testable; a sprouting jar needs kitchen failure/result conditions because those make health, freshness, drainage, and full-jar success testable.
+- `source_function`: problem creation, proof, contrast, authority, scale, emotion, joke, price pressure, CTA, or rhythm.
+- `target_pressure_field`: the target product's own environment where the same function can be truthfully proven.
+- `replacement_logic`: keep only if the target product has the same pressure field; otherwise replace the unit while preserving its function and sensory force.
+
+Scene units are especially relational. Do not directly copy night, bedroom, street, lab, car, white background, kitchen, or live-room shells until you can explain why the source product needed that environment. If the environment exists only to make the source product's function visible, replace it with the target product's own proof environment. Preserve the deeper mechanism, not the borrowed scene shell.
+
+Examples:
+
+- Night in a flashlight test is not automatically a "night aesthetic"; it is the pressure field that makes brightness, distance, and beam spread visible. For a purple-clay sprouting jar, the equivalent field is kitchen counter, sink, ordinary failed sprouting containers, same-seed comparison, open-lid full jar, drainage, and family table result.
+- A white authority background may be a proof-pressure field for precise object choreography and sparse verdicts. Keep the clean background only if the target product can also prove itself through controlled object choreography; otherwise replace it with a truthful proof setting that carries the same authority.
+- A car-window role drama scene may be a power-position field, not just a car shell. Replace the location only after preserving who controls attention, who is blocked, who returns, who is absent, and what state change creates the reversal.
+
+If the remake keeps a surface unit whose pressure field no longer fits the target product, revise before writing the script. That is usually fake similarity: it preserves shape while losing the source's real mechanism.
+
+### 8. Remap every category, not only the product
 
 Build the remake-side unit inventory before scripting:
 
@@ -190,7 +215,7 @@ Build the remake-side unit inventory before scripting:
 - camera/editing style
 - compliance boundaries
 
-Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`. Each row should cite source unit IDs and explain the reason. For 善砂坊, possible replacements include the examples below, but only use the ones that fit the current source's discovered mechanism:
+Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`. Each row should cite source unit IDs and explain the reason. Also include the source unit's relationships, source pressure field, target pressure field, and replacement logic for scene/background, proof-prop, comparison, audio, and copy units. For 善砂坊, possible replacements include the examples below, but only use the ones that fit the current source's discovered mechanism:
 
 - body/tool pain shells can become failed home sprouting visuals only when the source relies on problem close-ups.
 - product/tool structure shells can become purple-clay jar structure only when the source relies on mechanism proof.
@@ -199,7 +224,7 @@ Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`.
 - live-commerce pressure can become real price `149` and truthful live-room/CTA only when the source's ending is conversion-pressure-led.
 - If the source's core is casting, relationship, quiet authority, BGM melody, white background, sparse short phrases, or role power, preserve those sensory functions first and choose different remake-side units.
 
-### 8. Director brief before visual script
+### 9. Director brief before visual script
 
 Before the shot table, write a director brief:
 
@@ -207,6 +232,7 @@ Before the shot table, write a director brief:
 - opening conflict
 - unit-state engine
 - proof engine or story engine
+- source pressure field and target pressure field
 - main conversion-shot group
 - proof method
 - visual style
@@ -217,7 +243,7 @@ Before the shot table, write a director brief:
 
 If this brief cannot clearly explain why the remake still feels like the source, do not write the script yet.
 
-### 9. Visual script must be shootable and source-faithful
+### 10. Visual script must be shootable and source-faithful
 
 For each shot, include:
 
@@ -235,7 +261,7 @@ The picture/action sentence should be concise but not lossy. It must include key
 
 Do not write conceptual frames such as "show health", "prove quality", or "display structure". Say what the camera sees: "普通塑料盒里水积在底部，稀疏豆芽贴着盒底，手晃盒子让浑水反光."
 
-### 10. Review against failure modes
+### 11. Review against failure modes
 
 Before finalizing, explicitly check:
 
@@ -243,6 +269,7 @@ Before finalizing, explicitly check:
 - Is the main conversion shot still 满满一罐发得好的水培菜?
 - Did process/structure stay proof instead of becoming the main story?
 - Does the script preserve the source's camera/background/subtitle/audio/proof rhythm?
+- Did scene and prop replacements come from the target product's own proof/story pressure field instead of directly copying the source shell?
 - Did copy inherit source tone and function, or become generic ad copy?
 - Are BGM, voice style, SFX, live sound, and pauses represented?
 - Are post-edit units represented as units, not vague "字幕"?
@@ -261,8 +288,8 @@ For a full trial, output artifacts in this order:
 4. Story spine when the source is scripted or conflict-led: plot premise, character objectives, knowledge gaps, conflict, beat-by-beat cause/effect, reversal, joke/payoff, product bridge, and what can/cannot be changed.
 5. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
 6. Structured source graph: stable IDs for `units`, `unit_state_timeline`, `story_spine`, `plot_beats`, `character_arcs`, `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
-7. Mechanism vs shell: what must be preserved because it creates the source's effect, and what must change because it is category-specific, false, risky, or incompatible.
-8. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, remake units, and reason.
+7. Mechanism vs shell plus relationship-depth check: what must be preserved because it creates the source's effect; what must change because it is category-specific, false, risky, incompatible, or outside the target product's proof/story pressure field; and how each major scene/prop/copy/audio unit relates to other units.
+8. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, source relationships, source pressure field, target pressure field, remake units, and reason.
 9. Director brief: core mind, opening conflict, unit-state engine, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
 10. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, unit state change, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
 11. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
@@ -310,7 +337,7 @@ Classify the source's primary spirit before remapping. Common examples:
 - White-background authority spirit: pure background, sparse short phrases, BGM melody, precise object choreography, subtitle-as-verdict rhythm.
 - UGC proof spirit: rough selfie, real room, user language, live sound, repeated result demonstrations.
 
-Preserve the source shell by default. Change a shell only when it conflicts with product facts, audience, compliance, or shooting feasibility. If deleting a shell, replace its sensory function with an equivalent unit.
+Preserve the source shell only after the relationship-depth check says the shell still belongs to the target product's proof or story pressure field. Change a shell when it conflicts with product facts, audience, compliance, shooting feasibility, or the target product's own proof logic. If deleting a shell, replace its sensory function with an equivalent unit.
 
 ## Product Remap Rules
 
@@ -319,11 +346,16 @@ The product is not the only replacement unit. Remake-side people, props, scenes,
 For each source feature, decide:
 
 - `mechanism_to_preserve`: why the source works.
+- `unit_relationships`: which other units give this feature meaning.
+- `source_pressure_field`: why this feature was necessary for the source product or story.
+- `target_pressure_field`: where the target product can truthfully create the same proof/story pressure.
 - `shell_to_keep`: a visible/audible form that can remain.
 - `shell_to_replace`: a form that must change.
 - `replacement_sensory_function`: how the new unit recreates the same feeling.
 
 Avoid turning a high-similarity remake into a generic tutorial. If the source is news-like, the remake should still feel like a news segment. If the source is drama-like, the remake should still feel acted and socially charged. If the source is a proof montage, the remake should still feel dense and evidence-led.
+
+Do not replace by category name alone. "Night" does not map to night, "lab" does not map to lab, "car" does not map to car, and "white background" does not map to white background until their unit relationships are understood. Replace the reason the unit exists, then choose the target product's most truthful scene, prop, sound, and action to carry that reason.
 
 When the source is story-driven, map story roles before mapping product units:
 

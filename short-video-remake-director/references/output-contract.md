@@ -73,6 +73,7 @@ Must include:
 - Unit state mapping before story role mapping.
 - Story role mapping before product unit mapping.
 - Source-to-remake unit mapping.
+- Relationship-depth mapping for major scene, prop, proof, audio, and copy units: source relationships, source pressure field, target pressure field, replacement logic, and whether the surface shell is kept or changed.
 - Copy child-unit mapping before final script lines. Preserve the line's function, bound units, tone, delivery style, emotional temperature, pause, and audio/subtitle relation before changing the words.
 - Audio-unit mapping before final script lines. Preserve BGM/SFX/live-sound/silence functions that create the source's pressure, authority, joke timing, proof rhythm, or conversion push.
 - Compliance/fact boundary.
@@ -87,6 +88,7 @@ Each shot must specify:
 - Which unit state change it carries.
 - Which story beat it carries.
 - Frame and background.
+- Why this scene/background belongs to the target product's own proof or story pressure field, when it replaces a strong source scene shell.
 - People positions, posture, gaze, expression, gesture.
 - Product/prop state and hand actions.
 - Subtitle and spoken text.

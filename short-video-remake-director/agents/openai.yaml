@@ -1,4 +1,4 @@
 interface:
   display_name: "Short Video Remake Director"
-  short_description: "Find a reference video's unit-state timeline, story spine, spirit, and high-similarity remake script."
-  default_prompt: "Analyze this reference short video. If it is scripted, first output the unit-state timeline, then the story spine, then source units and spirit mechanism, then remap it into a high-similarity product remake script."
+  short_description: "Find a reference video's unit relationships, pressure fields, spirit, and high-similarity remake script."
+  default_prompt: "Analyze this reference short video. First output source units, unit-state timeline when needed, story/proof spine, unit relationships and pressure fields, then remap it into a high-similarity product remake script without copying surface shells blindly."
