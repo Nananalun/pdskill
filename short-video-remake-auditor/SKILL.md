@@ -15,6 +15,7 @@ Do not audit from the script alone. Re-run evidence on the finished video and co
 
 Finished-video TWE/TwelveLabs reconstruction is the default mandatory path. A full audit must rebuild the completed video as its own evidence object before scoring. Skip or downgrade from TWE only when the tool is genuinely unavailable, the upload/analysis fails after a real attempt, or the user explicitly asks for a local-only audit. In that case, mark the audit as partial and write the evidence gap into the outputs.
 Final user-facing audit outputs must be Chinese. Use Chinese prose, section titles, table headers, issue descriptions, score explanations, fix instructions, and final chat responses. Stable IDs, filenames, paths, provider names, raw source quotes, and schema keys may stay as-is. For full audits, write `中文审核报告.md` as the user-facing final audit report.
+Before writing the final user-facing audit, read `references/chinese-audit-report-template.md` and follow its structure unless the user explicitly asks for another format. The final report must integrate score, evidence, issues, audio/copy audit, unit-state gaps, and exact fixes in one Chinese file.
 
 ## Inputs
 
@@ -267,7 +268,7 @@ Put the voice/audio unit audit inside `05-issues-and-fix-plan.v1.md`, after the 
 
 `01-finished-video-evidence-summary.v1.md` must state whether finished-video TWE was run, where its artifacts were saved, and whether any evidence downgrade occurred.
 
-The chat final should be concise and Chinese: total score, score band, top 3-5 problems, and links to the files. Link `中文审核报告.md` first when it exists.
+The chat final should be concise and Chinese: total score, score band, top 3-5 problems, and links to the files. Link `中文审核报告.md` first when it exists. Build `中文审核报告.md` from `references/chinese-audit-report-template.md`.
 
 ## Quality Gates
 

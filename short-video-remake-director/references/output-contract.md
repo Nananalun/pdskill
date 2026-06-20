@@ -31,7 +31,7 @@ Required final user-facing file:
 中文最终交付.md
 ```
 
-`中文最终交付.md` is the primary file the user should read. It must include, in Chinese:
+`中文最终交付.md` is the primary file the user should read. It must follow `references/chinese-final-delivery-template.md` and include, in Chinese:
 
 - Source-video spirit judgment.
 - Important unit summary and unit relationships.
@@ -41,6 +41,8 @@ Required final user-facing file:
 - Execution notes, compliance notes, and known uncertainties.
 
 Internal artifact filenames, stable IDs such as `P01.V01`, provider names such as TWE/TwelveLabs, paths, raw source quotes, and YAML schema keys may remain non-Chinese. If an English word is not required for an ID, provider name, filename, path, raw quote, or schema key, rewrite it in Chinese before finalizing.
+
+If `中文最终交付.md` does not follow the template sections, lacks the Chinese visual-script table, or cannot be read as a standalone director delivery, the run is incomplete.
 ## Source Unit Summary Review
 
 Must include:

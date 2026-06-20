@@ -19,6 +19,7 @@ For scripted or semi-scripted videos, unit-state causality comes before story ca
 
 Unit replacement must go one layer deeper than surface similarity. A scene, prop, person, line, sticker, or sound is not portable just because it looks like a sensory anchor. First identify why that unit exists, which other units it depends on, what proof pressure or story pressure it creates for the source product, and what equivalent pressure field the target product needs. Only then decide whether to keep, replace, delete, or borrow its function.
 Final user-facing outputs must be Chinese. Use Chinese prose, section titles, table headers, shot descriptions, copy analysis, score summaries, and final chat responses. Stable IDs, file names, paths, provider names such as TWE/TwelveLabs, raw source quotations, code identifiers, and YAML schema keys may stay as-is, but every final reviewable delivery file must have a Chinese version. For full runs, write `中文最终交付.md` as the user-facing final delivery.
+Before writing the final user-facing delivery, read `references/chinese-final-delivery-template.md` and follow its structure unless the user explicitly asks for another format. The template is the quality bar for no-context sessions: it must produce one integrated Chinese file that resembles the successful prior deliverable, not a loose pile of separate artifacts.
 
 ## Evidence Workflow
 
@@ -325,7 +326,7 @@ For a full trial, output artifacts in this order:
 12. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
-After writing the structured artifacts, write `中文最终交付.md`. This is the file the user should read first. It must summarize the source spirit, important units, unit relationships, remap strategy, human copy map, and visual script in Chinese. Run a simple Latin-letter scan or manual review and remove non-essential English from prose and table headers. English may remain only for stable IDs, filenames, paths, provider names, raw source text, code identifiers, and YAML keys.
+After writing the structured artifacts, write `中文最终交付.md` using `references/chinese-final-delivery-template.md`. This is the file the user should read first. It must summarize the source spirit, important units, unit relationships, remap strategy, human copy map, and visual script in Chinese. It must use the integrated Chinese sections and visual-script table shape from the template. Run a simple Latin-letter scan or manual review and remove non-essential English from prose and table headers. English may remain only for stable IDs, filenames, paths, provider names, raw source text, code identifiers, and YAML keys.
 
 Visual script picture descriptions should stay lightweight but complete. Use one clear sentence for the frame/action column, not a heavy start/middle/end breakdown, but include any key spatial move, absence/return, foreground/background, product/prop entry, and post-edit sticker that changes the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
 
@@ -442,4 +443,5 @@ Do not lead with "easy tool" or a usage tutorial unless the user asks. Lead with
 - `references/story-layer.md`: required story extraction and remap rules for scripted, role-play, and conflict-led videos.
 - `references/unit-schema.md`: structured fields for the source graph.
 - `references/output-contract.md`: required artifact shapes and file naming.
+- `references/chinese-final-delivery-template.md`: required integrated Chinese final delivery template and self-check list.
 - `references/zisha-product-baseline.md`: purple-clay sprouting jar selling points and compliance boundaries.

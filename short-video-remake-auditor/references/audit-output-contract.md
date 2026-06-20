@@ -13,7 +13,7 @@ Required final user-facing file:
 中文审核报告.md
 ```
 
-`中文审核报告.md` is the primary file the user should read. It must include, in Chinese:
+`中文审核报告.md` is the primary file the user should read. It must follow `references/chinese-audit-report-template.md` and include, in Chinese:
 
 - Audit conclusion and total score.
 - Main mechanism/spirit preservation judgment.
@@ -24,6 +24,8 @@ Required final user-facing file:
 - Evidence limits and uncertainty.
 
 Internal artifact filenames, stable IDs, provider names such as TWE/TwelveLabs, paths, raw source quotes, and schema keys may remain non-Chinese. If an English word is not required for those purposes, rewrite it in Chinese before finalizing.
+
+If `中文审核报告.md` does not follow the template sections, lacks an issue table with exact fixes, or omits the voice/audio audit, the audit is incomplete.
 ## Evidence Summary
 
 Must include:
