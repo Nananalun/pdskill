@@ -35,19 +35,23 @@ Must include:
 - TWE status and segment count. Finished-video TWE/TwelveLabs is mandatory for a full audit unless explicitly unavailable or the user requests local-only.
 - TWE artifact directory, raw response path, parsed segment path, and evidence downgrade notes if TWE failed.
 - reference package version audited against.
+- approved director baseline audited against, especially `中文最终交付.md` and the newest approved `14-visual-script*.md`.
 - missing evidence and uncertainty.
 
 ## Comparison Table
 
 Each row should include:
 
+- approved director shot/line/unit requirement.
 - reference unit or requirement.
 - intended function.
 - target pressure field.
 - finished video evidence.
 - match level: `match`, `partial`, `miss`, `wrong`, `not_applicable`.
 - reason.
-- fix.
+- smallest fix needed to return the finished video to the approved director baseline.
+
+Do not use the comparison table to create a new remake script. If the approved director baseline is itself wrong, mark the row as `director-baseline-defect`, explain why, and recommend returning to `short-video-remake-director`.
 
 ## Scorecard
 
@@ -65,16 +69,18 @@ Each issue must include:
 
 - severity.
 - finished time range.
+- approved director shot/line/unit requirement.
 - source/reference requirement.
 - observed problem.
 - why it matters.
 - lost user psychology.
-- fix type.
+- fix type. Use `director-baseline-defect` only when the approved director baseline itself is wrong; otherwise use recut, reshoot, voiceover, subtitle/overlay, audio, color/framing, or compliance.
 - exact fix instruction.
 
 The issue plan must also include:
 
 - A voice/audio unit audit section inside `05-issues-and-fix-plan.v1.md`, not a separate sixth file unless requested.
+- A director-baseline alignment section: each issue should be a deviation from the approved script/shot/unit, not a newly invented script direction.
 - Shot-spirit failures: missing or weak `viewer_before -> trigger_units -> viewer_after` for important shots.
 - Human-copy failures: lines that sound written, educational, explanatory, repetitive, brand-first, or disconnected from visible action.
 - Unit-state clarity failures: vague visual rows where people, product, props, scene, post-edit, audio, or user psychology cannot be reconstructed.

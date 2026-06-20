@@ -9,9 +9,21 @@ description: Audit a finished short-video remake against a reference-video remak
 
 This skill does not judge whether a video is generally "good." It judges whether the finished remake preserved the reference video's discovered mechanism while truthfully adapting it to the target product.
 
-Score is only the top-level result. The main value is a precise diagnosis: what is wrong, what is insufficient, where it happens in the finished video, which reference unit or script requirement it violates, what user psychology is lost, and whether the fix is recut, reshoot, voiceover, overlay, audio, or compliance rewrite.
+Score is only the top-level result. The main value is a precise diagnosis: what is wrong, what is insufficient, where it happens in the finished video, which approved director unit or script requirement it violates, what user psychology is lost, and whether the fix is recut, reshoot, voiceover, overlay, audio, or compliance rewrite.
 
 Do not audit from the script alone. Re-run evidence on the finished video and compare observed units against the reference analysis, remake map, director brief, and visual script.
+
+## Director Script Anchor Rule
+
+The auditor must not become a second director that invents a different remake.
+
+Before judging or fixing, lock the approved director baseline from the reference package. Prefer `中文最终交付.md` as the primary baseline, then `14-visual-script*.md`, `13-remake-map-and-director-brief*.md`, `12-shot-spirit-and-copy-map*.md`, and upstream unit files as supporting evidence. State the exact baseline files and versions in the audit.
+
+All audit findings and fixes must answer: "Did the finished video execute the approved director plan?" Fixes should be the smallest changes needed to bring the finished video back to that plan: recut timing, reshoot a missing unit, restore a sticker, change a line back to the mapped source function, adjust voice/BGM/SFX, or repair a product-fact/compliance issue.
+
+Do not output a brand-new visual script, new story spine, or new selling sequence as the main audit result. If the approved director plan itself is clearly wrong, contradictory, unsafe, or no longer matches the user's latest product strategy, mark that as `director-baseline-defect`, explain the evidence, and recommend returning to `short-video-remake-director`. Keep the auditor output as a defect report and targeted change list, not a replacement script.
+
+When suggesting copy changes, preserve the approved line's source function, speaker/persona, rhythm, bound visual unit, subtitle relation, and user-psychology target. You may provide a revised sentence only as a patch for that exact line, not as a new script system.
 
 Finished-video TWE/TwelveLabs reconstruction is the default mandatory path. A full audit must rebuild the completed video as its own evidence object before scoring. Skip or downgrade from TWE only when the tool is genuinely unavailable, the upload/analysis fails after a real attempt, or the user explicitly asks for a local-only audit. In that case, mark the audit as partial and write the evidence gap into the outputs.
 Final user-facing audit outputs must be Chinese. Use Chinese prose, section titles, table headers, issue descriptions, score explanations, fix instructions, and final chat responses. Stable IDs, filenames, paths, provider names, raw source quotes, and schema keys may stay as-is. For full audits, write `中文审核报告.md` as the user-facing final audit report.
@@ -29,8 +41,10 @@ Prefer these inputs:
   - `09-twelvelabs-segment-summary*.md`
   - `10-source-unit-summary-review*.md`
   - `11-source-unit-graph*.yaml`
-  - `12-remake-map-and-director-brief*.md`
-  - `13-visual-script*.md`
+  - `12-shot-spirit-and-copy-map*.md`
+  - `13-remake-map-and-director-brief*.md`
+  - `14-visual-script*.md`
+  - `中文最终交付.md`
 
 If several versions exist, use the newest approved version unless the user names a specific version. If unsure, inspect file timestamps and version numbers, then state which version is being audited against.
 
@@ -38,6 +52,7 @@ If several versions exist, use the newest approved version unless the user names
 
 1. Confirm the finished video path and the reference package path.
 2. Read the reference package before judging. Extract:
+   - approved director baseline files and versions; prefer `中文最终交付.md` plus the newest approved `14-visual-script*.md`.
    - one-sentence source spirit.
    - bottom mechanism or story/proof engine.
    - pressure fields: source pressure field and target product pressure field.
@@ -54,7 +69,7 @@ If several versions exist, use the newest approved version unless the user names
    - Build a separate voice/audio unit audit. Do not collapse audio into "has BGM" or "has spoken copy." Extract narrator persona, perceived timbre, emotional temperature, delivery style, sentence length, pause pattern, attack points, repetition, BGM role, action SFX, sticker/transition sounds, and voice-picture alignment. If you cannot directly hear or reliably model timbre, mark it as an evidence gap instead of inventing it.
    - Treat TWE as evidence, not final judgment; cross-check against frames.
 4. Reconstruct the finished video as its own unit-state timeline. Do not merely assume the planned script was executed.
-5. Compare the finished unit-state timeline against the reference/remake requirements.
+5. Compare the finished unit-state timeline against the approved director baseline first, then use source/reference requirements to explain why each deviation matters.
 6. Score only after listing evidence-backed issues.
 
 If TWE is unavailable or fails, do not silently continue as if the audit is complete. Record:
@@ -241,12 +256,13 @@ For every meaningful issue, output a row with:
 - severity: `P0` breaks the remake, `P1` materially weakens conversion/similarity, `P2` polish
 - finished video time range
 - observed finished-video evidence
+- approved director shot/line/unit requirement
 - reference requirement or source unit IDs
 - what is wrong
 - what is insufficient, if it is not fully wrong
 - lost user psychology
 - score impact
-- fix type: `recut`, `reshoot`, `voiceover`, `subtitle/overlay`, `audio`, `color/framing`, `compliance`, or `director-rewrite`
+- fix type: `recut`, `reshoot`, `voiceover`, `subtitle/overlay`, `audio`, `color/framing`, `compliance`, or `director-baseline-defect`
 - concrete fix instruction
 
 Do not write vague comments such as "not enough impact" without naming the image, timing, reference requirement, and replacement action.
@@ -266,6 +282,8 @@ For a full audit, write files to a per-video output directory:
 
 Put the voice/audio unit audit inside `05-issues-and-fix-plan.v1.md`, after the main issue table. Do not create a separate sixth file unless the user explicitly asks for a standalone audio report.
 
+Put a director-baseline alignment section inside `03-reference-vs-finished-comparison.v1.md` and `中文审核报告.md`: list the exact approved director shots/lines/units, what the finished video did, and the smallest correction needed. This section must not become a new visual script.
+
 `01-finished-video-evidence-summary.v1.md` must state whether finished-video TWE was run, where its artifacts were saved, and whether any evidence downgrade occurred.
 
 The chat final should be concise and Chinese: total score, score band, top 3-5 problems, and links to the files. Link `中文审核报告.md` first when it exists. Build `中文审核报告.md` from `references/chinese-audit-report-template.md`.
@@ -275,6 +293,8 @@ The chat final should be concise and Chinese: total score, score band, top 3-5 p
 - Do not score before reconstructing the finished video.
 - Do not score a full audit before running finished-video TWE/TwelveLabs or explicitly documenting why it could not be run.
 - Do not rely on intended script if finished evidence contradicts it.
+- Do not create a different remake script while auditing. Audit against the approved `中文最终交付.md`/`14-visual-script` baseline and give targeted patches only.
+- Do not rewrite the selling order, shot order, or story logic unless the issue is explicitly marked `director-baseline-defect` and sent back to the director stage.
 - Do not reward surface similarity when pressure-field adaptation is wrong.
 - Do not accept a shot without a viewer-before -> trigger-units -> viewer-after spirit diagnosis when the shot is important to the remake.
 - Do not accept AI-like copy merely because the selling point is factually correct; flag copy that sounds written, educational, or mechanically explanatory.

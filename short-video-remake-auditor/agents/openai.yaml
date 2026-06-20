@@ -1,5 +1,4 @@
 interface:
   display_name: "Short Video Remake Auditor"
-  short_description: "Audit a finished remake video against reference units, pressure fields, visual shock, and product fit."
-  default_prompt: "Audit this finished remake video against the short-video-remake-director reference package. Reconstruct the finished video first, then compare spirit, unit relationships, pressure fields, visual shock, structure, audio/copy, product selling point, and compliance. Give a score plus exact issues and fixes."
-
+  short_description: "Audit a finished remake video against the approved director baseline, reference units, audio, visual shock, and product fit."
+  default_prompt: "Audit this finished remake video against the approved short-video-remake-director package. Lock 中文最终交付.md and 14-visual-script as the baseline, reconstruct the finished video first, then compare spirit, unit relationships, pressure fields, visual shock, structure, audio/copy, product selling point, and compliance. Give a score plus exact deviations and smallest fixes; do not create a different remake script."
