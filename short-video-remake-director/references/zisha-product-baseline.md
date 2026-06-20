@@ -1,108 +1,107 @@
-# 善砂坊紫砂水培育罐产品基准
+# 膳砂坊紫砂水培育罐产品基准
 
-Use this reference when the remake target is the 善砂坊紫砂水培育罐.
+当复刻目标是膳砂坊紫砂水培育罐时，读取这份基准。
 
-## Selling Priority
+## 卖点优先级
 
-1. Health/养生 mind:
-   - 家里自己发健康养生水培菜; 豆芽只是高频代表之一, not the only result.
-   - 紫砂材质带来天然、传统、厨房可信感.
-   - 新鲜现发, 绿色生活/健康营养.
-   - 给老人、孩子、家里人吃更像日常养生小菜.
-   - 只用豆子和清水, with a strong "0 添加/0 污染" feeling.
-   - 过程看得见/可记录只能作为健康养生的辅助证据, not the headline selling point.
-   - 最强转化画面是满满一罐发得很好的水培菜, not the tool itself and not a usage tutorial.
+1. 健康/养生心智：
+   - 家里自己发健康养生水培菜；豆芽只是高频代表之一，不是唯一结果。
+   - 紫砂材质带来天然、传统、厨房可信感。
+   - 新鲜现发，绿色生活/健康营养。
+   - 给老人、孩子、家里人吃，更像日常养生小菜。
+   - 只用豆子和清水，要形成强烈的“少添加、过程干净”的感觉。
+   - 过程看得见、可记录，只能作为健康养生的辅助证据，不是主标题卖点。
+   - 最强转化画面是满满一罐发得很好的水培菜，不是工具本身，也不是使用教程。
 
-2. Result display:
-   - 满满一罐发得好的水培菜 is the main visual proof and conversion shot.
-   - Show dense, fresh-looking, upright, abundant growth in the jar; include bean sprouts, bean seedlings, and other truly shootable hydroponic greens when available.
-   - A spread of several finished water-grown vegetables is stronger than repeating only bean sprouts.
-   - The audience should first feel "这罐发得真好, 家里能吃上养生小菜", then understand the structure.
+2. 结果展示：
+   - 满满一罐发得好的水培菜是主视觉证明和核心转化镜头。
+   - 画面要展示罐内生长密、鲜、挺、量大；有条件时可包括豆芽、豆苗和其他真实可拍的水培菜。
+   - 多种水培菜成品铺开，比反复只拍豆芽更有想象空间。
+   - 观众应该先感觉“这罐发得真好，家里能吃上养生小菜”，再理解结构。
 
-3. Structure/material proof:
-   - 全隔水设计: 豆芽不烂根.
-   - 压盘: 模拟土壤压力, 均匀受力, 豆芽更壮、更齐.
-   - 避光盖: 豆芽类全程避光, reduces visible greening risk.
-   - 篦子/沥水/储水托盘: water drains away instead of soaking beans; 接水盘不可存水.
-   - 紫砂微孔/会呼吸: 拒绝塑料异味, gives non-plastic, natural vessel trust.
+3. 结构/材质证明：
+   - 全隔水设计：豆芽不容易烂根。
+   - 压盘：模拟土壤压力，均匀受力，豆芽更壮、更齐。
+   - 避光盖：豆芽类全程避光，降低明显变绿的风险。
+   - 篦子、沥水、储水托盘：水要沥走，不让豆子一直泡着；接水盘不能存水。
+   - 紫砂微孔、会呼吸：拒绝塑料异味，形成非塑料、天然容器的信任感。
 
-4. Process proof:
-   - 使用教程/步骤 is not the selling point. Use it only as proof for why the result can happen.
-   - Do not lead with how to use the tool unless the source video's exact mechanism requires a tutorial hook.
+4. 过程证明：
+   - 使用教程和步骤不是主卖点，只用于证明为什么能发出结果。
+   - 除非源视频本身就是教程机制，否则不要用“怎么使用工具”开头。
 
-5. Result proof:
-   - 出芽率高 as a visual proof, not a bare promise.
-   - 4-6 天开盖收获豆芽; 豆苗 6-12 天.
-   - 成品: 满满一罐, fresh-looking, dense/upright, large quantity, crisp in cooking/eating when the crop supports it.
+5. 结果证明：
+   - 出芽率高要通过画面证明，不要只做口头承诺。
+   - 豆芽约四到六天开盖收获；豆苗约六到十二天。
+   - 成品画面：满满一罐、看起来新鲜、密集挺立、量大；适合的品类可以表现脆感和下锅声音。
 
-The main story is not "a convenient sprouting tool," not "visible process," not a usage tutorial, and not only "sprouts grow stronger." The main story is: self-growing healthy/养生 water-grown vegetables in a purple-clay jar gives the family a fresh daily养生小菜; the full-jar finished result is the strongest proof, while visible process and structure are supporting proof.
+主故事不是“一个方便的发芽工具”，不是“过程看得见”，不是使用教程，也不只是“豆芽更粗壮”。主故事是：家里用紫砂罐自己发健康养生水培菜，让家人日常能吃上一口新鲜养生小菜；满罐成品是最强证明，过程和结构只是支撑证明。
 
-## Product Structure Facts
+## 产品结构事实
 
-- Five-piece set: lid, jar body, upper pressure plate, perforated draining plate, water tray.
-- Use process: clean/scald jar without detergent; soak beans 8-10 hours; put thin perforated plate at bottom; spread soaked beans flat; place thick pressure plate; close lid for light blocking; rinse 2-3 times/day or 3 times/day; rinse toward pressure plate center; let water drain naturally; do not leave water in tray.
-- Capacity cue from materials: one measuring cup is about 50g; choose quantity as needed.
-- Seed caveat: old seeds and genetically modified seeds may not sprout; oily seeds such as yellow beans/peanuts/sunflower seeds should be refrigerated.
+- 五件套：盖子、罐身、上压盘、沥水篦、接水托。
+- 使用过程：不用洗洁精清洗或烫洗罐体；豆子浸泡八到十小时；薄篦子放底部；泡好的豆子铺平；放厚压盘；盖盖避光；每天冲洗二到三次或三次；水冲向压盘中心；自然沥水；接水托不要留水。
+- 容量提示：一量杯约五十克，可按需要选择豆量。
+- 种子提示：陈年种子和转基因种子可能不发芽；黄豆、花生、葵花籽等油性种子建议冷藏。
 
-## Shootable Proof
+## 可拍证明
 
-- Family kitchen/table, not industrial studio only.
-- Beans poured in by hand.
-- Beans soaked 8-10 hours.
-- Pressure plate placed on beans.
-- Lid closed for light blocking.
-- Water drained into tray.
-- Tray water poured away; no standing water.
-- Open-lid full jar result: 满满一罐发得好的水培菜.
-- Finished-result variety: bean sprouts, bean seedlings, and other truly available hydroponic greens shown as a result collection.
-- Ordinary container vs purple-clay jar comparison with the same amount of beans.
-- Crispness: hand breaks a sprout, chopsticks lift sprouts, stir-fry sound, family eating.
-- Purple-clay material: close-up surface, lid tap, hand touch.
-- Non-plastic material contrast: purple-clay jar vs plastic container, framed as material preference rather than toxic attack.
+- 家庭厨房、餐桌，不要只用工业化影棚。
+- 手把豆子倒进去。
+- 豆子浸泡八到十小时。
+- 压盘放在豆子上。
+- 盖子盖上避光。
+- 水沥到接水托里。
+- 接水托里的水倒掉，不留积水。
+- 开盖满罐结果：满满一罐发得好的水培菜。
+- 成品多样性：豆芽、豆苗和其他真实可拍的水培菜作为结果集合。
+- 普通容器和紫砂罐用同量豆子做对比。
+- 脆感：手掰豆芽、筷子夹起、下锅声音、家人吃。
+- 紫砂材质：表面近景、敲盖声音、手摸材质。
+- 非塑料材质对比：紫砂罐对比塑料容器，表达材质偏好，不攻击所有塑料。
 
-## Safe Wording
+## 安全表达
 
-Use:
+可以用：
 
-- 自己发.
-- 健康养生.
-- 自家发养生水培菜.
-- 满满一罐发得好的水培菜.
-- 紫砂材质感.
-- 看得见, only as proof copy, not as the main hook.
-- 吃着更踏实/更放心.
-- 只用豆子和清水.
-- 0 添加/0 污染/0 难度 as a material-derived product phrase, preferably supported by process visuals.
-- 紫砂材质感.
-- 拒绝塑料异味.
-- 全隔水设计, 豆芽不烂根.
-- 模拟土壤压力, 豆芽更壮.
-- 家里发一罐.
-- 发得满满一罐.
-- 更容易发成.
-- 白净、粗壮、整齐、脆.
+- 自己发。
+- 健康养生。
+- 自家发养生水培菜。
+- 满满一罐发得好的水培菜。
+- 紫砂材质感。
+- 看得见，但只作为证明文案，不作为主钩子。
+- 吃着更踏实、更放心。
+- 只用豆子和清水。
+- 少添加、少折腾、清水水培，要尽量用过程画面支撑。
+- 拒绝塑料异味。
+- 全隔水设计，豆芽不容易烂根。
+- 模拟土壤压力，豆芽更壮。
+- 家里发一罐。
+- 发得满满一罐。
+- 更容易发成。
+- 白净、粗壮、整齐、脆。
 
-Use carefully, only with visual proof:
+谨慎使用，必须有画面证明：
 
-- 成功率高.
-- 健康安全.
-- 更适合家里人吃.
-- 更营养 or 3-5CM最有营养, only when tied to the usage material and not medicalized.
+- 成功率高。
+- 健康安全。
+- 更适合家里人吃。
+- 更营养，或“三到五厘米更有营养”，只能在有资料支撑时使用，不能医疗化。
 
-Do not use:
+不要用：
 
-- 包成功, 百分百成功, 零失败.
-- 治疗, 降糖, 养病, 医疗功效.
-- 绝对安全, 一定比外面安全.
-- 外面买的一定有问题.
-- 所有塑料都有毒.
-- Fake reports, fake patents, fake institution names.
+- 包成功、百分百成功、零失败。
+- 治疗、降糖、养病、医疗功效。
+- 绝对安全、一定比外面安全。
+- 外面买的一定有问题。
+- 所有塑料都有毒。
+- 虚假报告、虚假专利、虚假机构名。
 
-## Preferred Remake Replacements
+## 优先替换方向
 
-- Medical doctor -> food/养生 teacher, kitchen expert, family health observer, or news host.
-- Disease fear -> visible food-process concern: bought sprouts not visible, failed home sprouting, slimy/sour/green/soft sprouts.
-- Lab ingredient -> jar structure: clay body, lid, upper pressure plate, perforated draining plate, water tray.
-- Foam/cleaning sensation -> water sound, lid tap, opening full jar, crisp break, stir-fry sound.
-- Certificate proof -> real material document if available; otherwise structure evidence, comparison, family observation sheet.
-- UGC beauty users -> family users, older adults, children at table, home cooks.
+- 医生角色可替换为食养老师、厨房达人、家庭健康观察者或新闻主持。
+- 疾病恐惧可替换为可见的食物过程担忧：外买豆芽过程不可见、自己发芽失败、黏滑、发酸、变绿、发软。
+- 实验室成分可替换为罐体结构：紫砂罐身、盖子、上压盘、沥水篦、接水托。
+- 泡沫/清洁感可替换为水声、盖子敲击、开盖满罐、掰开脆感、下锅声音。
+- 证书证明可替换为真实材质文件；没有文件时，用结构证据、对比画面、家庭观察记录替代。
+- 美妆真人用户可替换为家庭用户、中老年人、餐桌上的孩子、家庭做饭的人。

@@ -122,6 +122,31 @@ mechanism_links:
     effect:
     remake_rule:
 
+shot_spirit_matrix:
+  - id: SSM01
+    source_time:
+    source_shot_or_block:
+    viewer_before:
+    trigger_visual_units: []
+    trigger_audio_units: []
+    trigger_copy_units: []
+    viewer_after:
+    psychology_type:
+    remake_requirement:
+    evidence:
+
+human_copy_map:
+  - id: HCM01
+    source_copy_unit:
+    source_line_function:
+    source_delivery:
+    bound_visual_units: []
+    bound_audio_units: []
+    literal_target_product_fact:
+    final_spoken_line:
+    why_it_sounds_human:
+    ai_copy_risk:
+
 remake_requirements:
   sensory_similarity_targets: []
   must_keep: []
@@ -134,6 +159,10 @@ uncertainties: []
 
 If the source is not story-driven, set `story_spine` to a brief `not_story_driven` note and omit detailed `characters` / `plot_beats`.
 
+
+## Chinese User-Facing Values
+
+When this schema feeds a final delivery file, write all user-facing values in Chinese. Stable schema keys, IDs, provider names, paths, and raw quoted source text may remain as-is, but labels, functions, psychology descriptions, replacement rules, uncertainty notes, and final spoken lines should be Chinese.
 ## Unit Fields
 
 For every important unit, capture:
@@ -246,3 +275,30 @@ For scripted, role-play, conflict-led, or semi-scripted sources, always create I
 - Payoff/joke.
 
 If required story units or style units are missing, the source graph is not ready for remapping.
+
+## Required Shot-Spirit Units
+
+For every important shot or block, capture:
+
+- `viewer_before`: viewer belief, worry, desire, doubt, or emotion before the shot.
+- `trigger_visual_units`: exact visual units and state changes that create the effect.
+- `trigger_audio_units`: BGM/SFX/live sound/silence/voice delivery units that create the effect.
+- `trigger_copy_units`: spoken or subtitle child units and their functions.
+- `viewer_after`: viewer belief, feeling, or purchase urge after the shot.
+- `psychology_type`: disgust, fear, relief, authority trust, "that is me", envy, value shock, proof satisfaction, social pressure, purchase urgency, joke payoff, or another specific psychology.
+- `remake_requirement`: what the target-product remake must make the viewer feel or believe.
+
+If these fields are missing, do not rely on a one-sentence spirit summary.
+
+## Human Copy Map Fields
+
+Before final remake lines, capture:
+
+- `source_copy_unit`: source spoken/subtitle child unit ID.
+- `source_line_function`: accusation, rejection, proof, result verdict, objection answer, value pressure, price pressure, CTA, joke, reversal, authority claim, or another exact function.
+- `literal_target_product_fact`: plain product fact before rewriting.
+- `final_spoken_line`: the line that should be spoken in the remake.
+- `why_it_sounds_human`: why this line fits the source speaker/persona and delivery style.
+- `ai_copy_risk`: what would make this line sound written, educational, abstract, repetitive, or generic.
+
+Do not accept the final spoken line if it only paraphrases the selling point.

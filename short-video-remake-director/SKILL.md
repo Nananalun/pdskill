@@ -1,6 +1,6 @@
 ---
 name: short-video-remake-director
-description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 单元状态时间线, 说话人归属, 在场/缺席时间线, high-similarity scripts, 编导策略, 拍摄单, or remap a reference video to a product such as 善砂坊紫砂水培育罐 while preserving sensory similarity instead of producing generic scripts.
+description: Short-video remake director workflow for competitor/reference videos. Use when the user asks to run or test a video, find a video's "神"/spirit, do 短视频复刻, 对标视频拆解, 元素单元拆解, 单元状态时间线, 说话人归属, 在场/缺席时间线, high-similarity scripts, 编导策略, 拍摄单, or remap a reference video to a product such as 膳砂坊紫砂水培育罐 while preserving sensory similarity instead of producing generic scripts.
 ---
 
 # Short Video Remake Director
@@ -11,9 +11,14 @@ Treat every source video as a new directing problem. Do not reuse the last video
 
 Sensory similarity comes before theory. The audience feels casting, posture, camera distance, subtitles, BGM, voice style, rhythm, proof staging, texture, and editing before it understands the selling-point logic.
 
+Shot-level spirit comes before selling-point translation. For every important source shot, identify the viewer's mind before the shot, the exact visual/audio/copy units that trigger a change, and the viewer's mind after the shot. A shot that only says "show product", "prove quality", or "highlight selling point" has not been understood.
+
+Human spoken copy comes before polished ad copy. Do not translate product facts directly into clean marketing lines. First identify the source line's function, speaker state, tone, pace, pause, and bound visual unit; then rewrite it as a line a real person in that source format would say.
+
 For scripted or semi-scripted videos, unit-state causality comes before story causality. Do not treat units as a static inventory. First track each important unit across time: whether it is present, absent, speaking, silent, moving, refusing, returning, proving, being revealed, or becoming a conversion prop. The story spine must be derived from this state timeline.
 
 Unit replacement must go one layer deeper than surface similarity. A scene, prop, person, line, sticker, or sound is not portable just because it looks like a sensory anchor. First identify why that unit exists, which other units it depends on, what proof pressure or story pressure it creates for the source product, and what equivalent pressure field the target product needs. Only then decide whether to keep, replace, delete, or borrow its function.
+Final user-facing outputs must be Chinese. Use Chinese prose, section titles, table headers, shot descriptions, copy analysis, score summaries, and final chat responses. Stable IDs, file names, paths, provider names such as TWE/TwelveLabs, raw source quotations, code identifiers, and YAML schema keys may stay as-is, but every final reviewable delivery file must have a Chinese version. For full runs, write `中文最终交付.md` as the user-facing final delivery.
 
 ## Evidence Workflow
 
@@ -28,6 +33,7 @@ Unit replacement must go one layer deeper than surface similarity. A scene, prop
    - If shell/terminal encoding corrupts Chinese prompts or paths, use an ASCII temporary path and an English structured prompt that requests Chinese output. Then cross-check against frames before trusting OCR or ASR.
 6. Cross-check TWE against keyframes. Manually add missing units, especially opening performance, BGM, spoken style, overall visual style, proof props, subtitle rhythm, conversion shots, speaker attribution, presence/absence, and plot causality.
    - For host-led, role-led, sales-led, or acted videos, treat spoken copy/subtitles as child units of the speaking person, not as standalone ad copy. Use IDs such as `P01.V01` and record the speaker identity, speaker state, bound visual evidence, bound prop/product/text units, tone, emotional temperature, delivery style, pace, pause pattern, rhythm, function, audio relation, subtitle relation, and replacement rule.
+   - For every important shot, add a shot-spirit row: `viewer_before -> trigger_units -> viewer_after`. Trigger units must name the exact image, sound, text, cut, sticker, line delivery, or actor state that changes the viewer's mind.
 7. If the video is scripted, semi-scripted, role-play, skit, or conflict-led, write a unit state timeline before the story spine. Use `references/unit-state-timeline.md`.
 8. Then write the story spine from the unit state timeline. Use `references/story-layer.md`.
 9. Write source units before the remake script. Do not jump directly to remapping.
@@ -43,7 +49,7 @@ Every source video is a new directing problem. Do not reuse the last video's spi
 ### 0. Lock the task and product baseline
 
 - Confirm the source video path and the target product.
-- For 善砂坊紫砂水培育罐, read `references/zisha-product-baseline.md` before remapping.
+- For 膳砂坊紫砂水培育罐, read `references/zisha-product-baseline.md` before remapping.
 - Treat the product priority as:
   1. Health/养生 mind: 家里自己发健康养生水培菜.
   2. Result proof: 满满一罐发得好的水培菜 is the strongest conversion shot.
@@ -177,6 +183,24 @@ Name the few units that make the source feel like itself. These are hard to dele
 
 If deleting a sensory anchor, state the incompatibility and replace its function with an equivalent sensory unit. Do not delete it silently.
 
+### 6.5 Build a shot-level spirit matrix
+
+Before remapping, create a shot-level spirit matrix for the source's important shots or time blocks. This is not optional when the user has complained about "有型没神", generic remakes, AI-like copy, or vague visuals.
+
+Each row must include:
+
+- `source_time`
+- `source_shot_or_block`
+- `viewer_before`: what the viewer likely believes, worries about, wants, doubts, or feels before the shot.
+- `trigger_visual_units`: exact visible units and state changes that affect the viewer.
+- `trigger_audio_units`: BGM, SFX, live sound, silence, voice texture, pace, pause, or emphasis.
+- `trigger_copy_units`: source spoken/subtitle line IDs and line function.
+- `viewer_after`: the new belief, feeling, or urge the shot creates.
+- `psychology_type`: disgust, fear, relief, authority trust, "that is me", envy, value shock, proof satisfaction, social pressure, purchase urgency, joke payoff, or another specific psychology.
+- `remake_requirement`: what the target-product shot must make the viewer feel, not just what it must show.
+
+If you cannot write this matrix, do not continue to the visual script. A one-sentence whole-video spirit is not enough.
+
 ### 7. Remap by relationship depth, not surface shape
 
 Before making the remake-side inventory, run a relationship-depth check for the source's most important units. This is mandatory for scene/background units, proof props, comparison objects, spoken hooks, and any sensory anchor that looks tempting to copy.
@@ -215,7 +239,7 @@ Build the remake-side unit inventory before scripting:
 - camera/editing style
 - compliance boundaries
 
-Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`. Each row should cite source unit IDs and explain the reason. Also include the source unit's relationships, source pressure field, target pressure field, and replacement logic for scene/background, proof-prop, comparison, audio, and copy units. For 善砂坊, possible replacements include the examples below, but only use the ones that fit the current source's discovered mechanism:
+Then map source units with `keep`, `replace`, `delete`, `add`, or `borrow-only`. Each row should cite source unit IDs and explain the reason. Also include the source unit's relationships, source pressure field, target pressure field, and replacement logic for scene/background, proof-prop, comparison, audio, and copy units. For 膳砂坊, possible replacements include the examples below, but only use the ones that fit the current source's discovered mechanism:
 
 - body/tool pain shells can become failed home sprouting visuals only when the source relies on problem close-ups.
 - product/tool structure shells can become purple-clay jar structure only when the source relies on mechanism proof.
@@ -256,16 +280,21 @@ For each shot, include:
 - delivery style
 - BGM/SFX/live sound/overlay state
 - psychological beat
+- viewer-before -> trigger-units -> viewer-after spirit diagnosis
+- human-copy check: source line function, literal product fact, final spoken line, and why it sounds like a person in this format
+- unit-state clarity: people/product/prop/scene/post-edit/audio states must be clear enough to reconstruct the screen
 
 The picture/action sentence should be concise but not lossy. It must include key spatial movement, foreground/background, product/prop entry, absence/return, and post-edit unit if it changes meaning.
 
 Do not write conceptual frames such as "show health", "prove quality", or "display structure". Say what the camera sees: "普通塑料盒里水积在底部，稀疏豆芽贴着盒底，手晃盒子让浑水反光."
 
+Reject AI-like copy during visual script review. Red flags include abstract nouns, long causal explanations, repeated sentence patterns, brand-first introductions before pain is felt, and lines that would not be spoken by the source format's speaker. Rewrite by moving from literal product fact to spoken seller/person line. Example: product fact "the drainage structure reduces root soaking" becomes "水别闷根"; product fact "pressure plate helps sprouts grow thicker" becomes "压住才粗"; result claim "full jar result proves value" becomes "看这一罐."
+
 ### 11. Review against failure modes
 
 Before finalizing, explicitly check:
 
-- Did the main selling point stay health/养生 for 善砂坊?
+- Did the main selling point stay health/养生 for 膳砂坊?
 - Is the main conversion shot still 满满一罐发得好的水培菜?
 - Did process/structure stay proof instead of becoming the main story?
 - Does the script preserve the source's camera/background/subtitle/audio/proof rhythm?
@@ -289,12 +318,14 @@ For a full trial, output artifacts in this order:
 5. Source unit summary review: human-auditable table covering people, product, props, scene/background, problem visuals, proof, subtitles, voice/dialogue, BGM, live sound/SFX, camera, editing, performance style, whole-video style, sensory anchors, omissions.
 6. Structured source graph: stable IDs for `units`, `unit_state_timeline`, `story_spine`, `plot_beats`, `character_arcs`, `structure_blocks`, `element_units`, `unit_events`, `unit_relations`, `mechanism_links`, `remake_requirements`, `uncertainties`.
 7. Mechanism vs shell plus relationship-depth check: what must be preserved because it creates the source's effect; what must change because it is category-specific, false, risky, incompatible, or outside the target product's proof/story pressure field; and how each major scene/prop/copy/audio unit relates to other units.
-8. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, source relationships, source pressure field, target pressure field, remake units, and reason.
-9. Director brief: core mind, opening conflict, unit-state engine, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
-10. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, unit state change, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat.
-11. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
+8. Shot-level spirit and human-copy map: `source_time`, viewer-before, trigger visual/audio/copy units, viewer-after, psychology type, source line function, literal target fact, final spoken rewrite, and remake requirement.
+9. High-similarity remap table: `source_unit_ids`, action `keep|replace|delete|add|borrow-only`, source relationships, source pressure field, target pressure field, remake units, and reason.
+10. Director brief: core mind, opening conflict, unit-state engine, story engine, main conversion shot, proof method, rhythm, visual style, deletion choices, sensory similarity target.
+11. Visual script: shot-by-shot, with framing, actor positions, posture, gaze, hand actions, object state, unit state change, product entry, story beat, subtitle timing, voice style, BGM/SFX, live sound, psychological beat, and shot-level spirit diagnosis.
+12. Shooting sheet and risks: props, people, scenes, must-capture shots, compliance risks, likely places where the remake will become generic.
 
 Prefer writing these to files when the run is substantial. Use concise final chat summaries with file links.
+After writing the structured artifacts, write `中文最终交付.md`. This is the file the user should read first. It must summarize the source spirit, important units, unit relationships, remap strategy, human copy map, and visual script in Chinese. Run a simple Latin-letter scan or manual review and remove non-essential English from prose and table headers. English may remain only for stable IDs, filenames, paths, provider names, raw source text, code identifiers, and YAML keys.
 
 Visual script picture descriptions should stay lightweight but complete. Use one clear sentence for the frame/action column, not a heavy start/middle/end breakdown, but include any key spatial move, absence/return, foreground/background, product/prop entry, and post-edit sticker that changes the shot. Example: "车内前挡风 POV 看见男主把电动车从车前退到侧窗，女伴仍在后座冷脸，车门框压住下沿，头顶黄黑 `？！` 贴纸跟随移动。"
 
@@ -371,7 +402,7 @@ Before writing remake copy, map copy child units. Preserve the original line's f
 
 ## Purple-Clay Sprouting Jar Baseline
 
-When the target product is the 善砂坊紫砂水培育罐, read `references/zisha-product-baseline.md`.
+When the target product is the 膳砂坊紫砂水培育罐, read `references/zisha-product-baseline.md`.
 
 Default selling priority for this product:
 
@@ -389,6 +420,9 @@ Do not lead with "easy tool" or a usage tutorial unless the user asks. Lead with
 - For story-driven sources, the story spine must be derived from the unit state timeline and appear before the source unit summary. If the story spine contradicts the state timeline, fix the timeline or spine before writing the remake.
 - The story spine must name each main character's objective, obstacle, power position, knowledge gap, turning point, and payoff. "Short drama" or "conflict" alone is not enough.
 - Every causal claim must point to a visible state change, spoken line, subtitle, edit, or post-edit unit. Do not infer causality only from the product's desired selling logic.
+- Every important source shot must have a viewer-before -> trigger-units -> viewer-after spirit diagnosis. If this is missing, the remake will likely have shape without spirit.
+- Final remake copy must pass the human-copy gate: it must preserve the source line's function and sound like a real person in that video format, not a product manual or AI summary.
+- Every important visual-script row must be reconstructable from text. If people, product, prop, scene, post-edit, audio, and user psychology states are vague, revise the row.
 - The remake script must preserve the source story engine unless there is a clear compliance or product-truth reason to change it. If the engine changes, explain the replacement engine.
 - In visual scripts, the picture/frame column must be concise but not lossy: one sentence should say what the camera sees and any critical movement or missing unit. If a key movement such as "vehicle moves from front windshield to side window" is omitted, revise the shot.
 - The opening must be analyzed at higher resolution than the rest of the video.
