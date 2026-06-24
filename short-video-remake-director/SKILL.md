@@ -50,12 +50,18 @@ Every source video is a new directing problem. Do not reuse the last video's spi
 ### 0. Lock the task and product baseline
 
 - Confirm the source video path and the target product.
-- For 膳砂坊紫砂水培育罐, read `references/zisha-product-baseline.md` before remapping.
+- For 膳砂坊紫砂水培育罐, load the product library before remapping:
+  - First try the live product library at `D:\Backup\Documents\短视频内容团队\product-library\shanshafang-zisha-hydroponic-jar\product-remake-library.md`.
+  - If working in another checkout, also check the workspace-relative path `product-library/shanshafang-zisha-hydroponic-jar/product-remake-library.md`.
+  - Treat that live product library as the source of truth for product units, user mind, evidence directions, replacement principles, and expression boundaries.
+  - Read `references/zisha-product-baseline.md` only as a fallback or historical summary when the live product library is unavailable.
+  - In every user-facing full run, state `本次产品信息源` and whether the live product library or fallback baseline was used.
 - Treat the product priority as:
   1. Health/养生 mind: 家里自己发健康养生水培菜.
-  2. Result proof: 满满一罐发得好的水培菜 is the strongest conversion shot.
+  2. Result proof: 满满一罐发得好的水培菜 is a high-priority proof direction when the source mechanism needs result proof or visual shock.
   3. Structure proof: 紫砂、避光盖、压盘、沥水篦、接水托 explain why the result can happen.
 - Do not let the script drift into a usage tutorial unless the source itself is tutorial-led. Process is proof, not the lead selling point.
+- Do not treat product-library evidence directions as fixed shots. The source video's unit functions decide the scene and frame. Use the product library only to choose truthful same-function replacement units.
 
 ### 1. Build evidence before judgment
 
@@ -296,7 +302,7 @@ Reject AI-like copy during visual script review. Red flags include abstract noun
 Before finalizing, explicitly check:
 
 - Did the main selling point stay health/养生 for 膳砂坊?
-- Is the main conversion shot still 满满一罐发得好的水培菜?
+- When the source mechanism needs result proof or visual shock, did the remake keep a strong product-library-consistent result proof instead of drifting into tool display?
 - Did process/structure stay proof instead of becoming the main story?
 - Does the script preserve the source's camera/background/subtitle/audio/proof rhythm?
 - Did scene and prop replacements come from the target product's own proof/story pressure field instead of directly copying the source shell?
@@ -403,12 +409,19 @@ Before writing remake copy, map copy child units. Preserve the original line's f
 
 ## Purple-Clay Sprouting Jar Baseline
 
-When the target product is the 膳砂坊紫砂水培育罐, read `references/zisha-product-baseline.md`.
+When the target product is the 膳砂坊紫砂水培育罐, read the live product library first:
+
+1. `D:\Backup\Documents\短视频内容团队\product-library\shanshafang-zisha-hydroponic-jar\product-remake-library.md`
+2. `product-library/shanshafang-zisha-hydroponic-jar/product-remake-library.md` relative to the current workspace, if present.
+
+Use it as the source of truth for product understanding. It overrides the bundled baseline when they differ. If neither live path exists, read `references/zisha-product-baseline.md` as fallback and clearly mark the product source as fallback in the outputs.
+
+The product library is not a fixed shot template. It provides product units, user psychology, evidence directions, replacement principles, and compliance boundaries. Always remap from the source video's unit function first, then choose a target-product unit that carries the same proof/story/sensory role.
 
 Default selling priority for this product:
 
 1. Health/养生 mind: self-grown water-cultivated vegetables at home, natural purple-clay feel, more reassuring for family meals.
-2. Result display: the strongest conversion shot is a full jar of well-grown water-cultivated vegetables; bean sprouts are one common result, not the whole category.
+2. Result display: a full jar of well-grown water-cultivated vegetables is a high-priority proof direction when the source mechanism needs result proof or visual shock; bean sprouts are one common result, not the whole category.
 3. Proof support: usage steps, pressure plate, light blocking, drainage, and clay structure are evidence for the result, not the main selling point.
 
 Do not lead with "easy tool" or a usage tutorial unless the user asks. Lead with health/养生 and full-jar result display, then use structure and process as proof.

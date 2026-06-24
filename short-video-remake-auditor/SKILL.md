@@ -25,6 +25,16 @@ Do not output a brand-new visual script, new story spine, or new selling sequenc
 
 When suggesting copy changes, preserve the approved line's source function, speaker/persona, rhythm, bound visual unit, subtitle relation, and user-psychology target. You may provide a revised sentence only as a patch for that exact line, not as a new script system.
 
+For 膳砂坊紫砂水培育罐 audits, load the product library before judging product understanding:
+
+1. First try `D:\Backup\Documents\短视频内容团队\product-library\shanshafang-zisha-hydroponic-jar\product-remake-library.md`.
+2. If working in another checkout, also check `product-library/shanshafang-zisha-hydroponic-jar/product-remake-library.md` relative to the current workspace.
+3. Treat the live product library as the source of truth for product units, user mind, evidence directions, replacement principles, and expression boundaries.
+4. If the live product library is unavailable, use the bundled/director fallback baseline only as a fallback and state that downgrade in the audit report.
+5. If the approved director baseline conflicts with the live product library, mark the issue as `director-baseline-defect` instead of silently judging the finished video against stale product facts.
+
+Do not treat product-library evidence directions as fixed required shots. Audit whether the finished video used target-product units to preserve the approved source mechanism and user psychology.
+
 Finished-video TWE/TwelveLabs reconstruction is the default mandatory path. A full audit must rebuild the completed video as its own evidence object before scoring. Skip or downgrade from TWE only when the tool is genuinely unavailable, the upload/analysis fails after a real attempt, or the user explicitly asks for a local-only audit. In that case, mark the audit as partial and write the evidence gap into the outputs.
 Final user-facing audit outputs must be Chinese. Use Chinese prose, section titles, table headers, issue descriptions, score explanations, fix instructions, and final chat responses. Stable IDs, filenames, paths, provider names, raw source quotes, and schema keys may stay as-is. For full audits, write `中文审核报告.md` as the user-facing final audit report.
 Before writing the final user-facing audit, read `references/chinese-audit-report-template.md` and follow its structure unless the user explicitly asks for another format. The final report must integrate score, evidence, issues, audio/copy audit, unit-state gaps, and exact fixes in one Chinese file.
@@ -143,7 +153,7 @@ Audit from deepest to most visible:
 4. **Visual shock and user psychology**
    - What should the viewer feel at key moments?
    - Did the finished image actually trigger that feeling?
-   - For 膳砂坊紫砂水培育罐, common visual-shock targets include full-to-the-rim jar, same-seed contrast, one jar poured into a large basin, crisp break, full family-table result, and price/result same-frame.
+   - For 膳砂坊紫砂水培育罐, candidate visual-shock directions include full-to-the-rim jar, same-seed contrast, one jar poured into a large basin, crisp break, full family-table result, and price/result same-frame. These are not fixed requirements; use them only when the approved director baseline or source mechanism requires visual shock/result proof.
 
 5. **Structure and rhythm**
    - Are opening, escalation, proof, explanation, price, and CTA in the right order?
@@ -165,7 +175,7 @@ Audit from deepest to most visible:
    - A replacement line must keep the source line's function and human delivery, not just the product fact. Prefer spoken verdicts tied to visible action: "水别闷根", "压住才粗", "看这一罐", "别再用盒子泡了".
 
 8. **Product selling point**
-   - For 膳砂坊紫砂水培育罐, the primary mind is health/养生: self-grown water-cultivated vegetables at home, with full-jar result as strongest proof.
+   - For 膳砂坊紫砂水培育罐, the primary mind is health/养生: self-grown water-cultivated vegetables at home. Full-jar result is a strong proof direction, not a fixed shot requirement when the source mechanism calls for another truthful same-function proof.
    - Structure/process must support the result, not become the main story unless the reference itself is tutorial-led.
 
 9. **Compliance and truth**
